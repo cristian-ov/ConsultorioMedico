@@ -36,6 +36,13 @@ class Persona:
 class funcionarios(Persona):
     pass
 
+
+
+
+func1 = funcionarios("207790516","Cristian","crisov1998","19/05/1998",
+                   "cristianov19@gmail.com","Cedral",19,"Masculino","8521-3563","Medico")
+
+
 class pacientes(Persona):
     tipoSangre = ""
 
