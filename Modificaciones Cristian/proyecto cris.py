@@ -87,6 +87,7 @@ def menuInicio(listaPersonas,listaCitas):
           "2-Registrarse\n"
           "3-Salir\n")
     opMenuIni = input("Seleccione una opcion:")
+
     if opMenuIni == "1":
         iniciarSeccion(listaPersonas,listaCitas)
 
@@ -243,7 +244,6 @@ def registrarCita(listaPersonas, listaCitas):
             for t in listaPersonas:
                 if t.tipo_usuario == "Medico":#Revisar este proceso
                     print("Doctor:", t.nombre)
-                    doc = t.nombre
             doctor = input("Digete el nombre del doctor: ")
             for l in listaPersonas:
                 if doctor == l.nombre:

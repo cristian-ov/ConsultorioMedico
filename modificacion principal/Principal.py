@@ -76,18 +76,23 @@ eduardo = Citas(paciente1.id,paciente1.nombre,"04/05/2018","4:00 pm",medico1.nom
 listaCitas.append(eduardo)
 
 def menuInicio(listaPersonas,listaCitas):
-    print("\n1-Iniciar sesion\n"
+    while True:
+        print("\n1-Iniciar sesion\n"
           "2-Registrarse\n"
           "3-Salir\n")
-    opMenuIni = input("Seleccione una opcion:")
-    if opMenuIni == "1":
-        iniciarSeccion(listaPersonas,listaCitas)
+        opMenuIni = int(input("Seleccione una opcion:"))
+        try:
+            if opMenuIni == 1:
+                iniciarSeccion(listaPersonas,listaCitas)
 
-    elif opMenuIni== "2":
-        registro(listaPersonas)
+            elif opMenuIni == 2:
+                registro(listaPersonas)
 
-    elif opMenuIni != 1 and opMenuIni != 2:
-        print("\nGracias por preferirnos\n")
+            elif opMenuIni == 3:
+                print("\nGracias por preferirnos\n")
+                break
+        except ValueError:
+            print("Me cago en TODO lo que se menea")
 
 # 1.
 
