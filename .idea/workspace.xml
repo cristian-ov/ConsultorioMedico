@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32a3a68f-84a3-4e4f-bd60-2896ff328938" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Modificaciones Cristian/ejemplo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modificaciones Cristian/ffff.py" afterPath="$PROJECT_DIR$/Modificaciones Cristian/ffff.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modificaciones Cristian/modificado.py" afterPath="$PROJECT_DIR$/Modificaciones Cristian/modificado.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,6 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Consultorio_medico$main.coverage" NAME="main Coverage Results" MODIFIED="1502488898488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Consultorio_Medico$ejemplo.coverage" NAME="ejemplo Coverage Results" MODIFIED="1503175842976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modificaciones Cristian" />
     <SUITE FILE_PATH="coverage/Consultorio_medico$proyectoProgra_modificado.coverage" NAME="proyectoProgra modificado Coverage Results" MODIFIED="1502055638740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp" />
     <SUITE FILE_PATH="coverage/Consultorio_medico$proyectoProgra__1_.coverage" NAME="proyectoProgra (1) Coverage Results" MODIFIED="1502049218498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Consultorio_medico$pruebasProyecto.coverage" NAME="pruebasProyecto Coverage Results" MODIFIED="1502061363530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp" />
@@ -31,10 +30,9 @@
       <file leaf-file-name="modificado.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/modificado.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="41" column="92" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="92" />
+            <state relative-caret-position="192">
+              <caret line="84" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
               <folding>
-                <element signature="e#3689#4306#0" expanded="false" />
                 <element signature="e#4357#6474#0" expanded="false" />
                 <element signature="e#6537#7203#0" expanded="false" />
                 <element signature="e#7270#7700#0" expanded="false" />
@@ -57,11 +55,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ejemplo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menos metodos.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="e#3939#6630#0" expanded="false" />
+                <element signature="e#6679#7650#0" expanded="false" />
+                <element signature="e#7987#8653#0" expanded="false" />
+                <element signature="e#8720#9150#0" expanded="false" />
+                <element signature="e#9241#9572#0" expanded="false" />
+                <element signature="e#9627#9945#0" expanded="false" />
+                <element signature="e#10018#10180#0" expanded="false" />
+                <element signature="e#10220#10560#0" expanded="false" />
+                <element signature="e#10731#11297#0" expanded="false" />
+                <element signature="e#11360#11764#0" expanded="false" />
+                <element signature="e#11826#15002#0" expanded="false" />
+                <element signature="e#12319#14887#0" expanded="false" />
+                <element signature="e#15062#15214#0" expanded="false" />
+                <element signature="e#15254#15473#0" expanded="false" />
+                <element signature="e#15534#16183#0" expanded="false" />
+                <element signature="e#16259#17230#0" expanded="false" />
+                <marker date="1503176908616" expanded="false" signature="17279:18080" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ejemplo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/ejemplo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state relative-caret-position="1848">
+              <caret line="95" column="10" lean-forward="false" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -91,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/proyecto cris.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="245" column="46" lean-forward="true" selection-start-line="245" selection-start-column="46" selection-end-line="245" selection-end-column="46" />
+              <caret line="245" column="46" lean-forward="false" selection-start-line="245" selection-start-column="46" selection-end-line="245" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -131,6 +157,7 @@
         <option value="$PROJECT_DIR$/Modificaciones Cristian/ffff.py" />
         <option value="$PROJECT_DIR$/Modificaciones Cristian/modificado.py" />
         <option value="$PROJECT_DIR$/Modificaciones Cristian/ejemplo.py" />
+        <option value="$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py" />
       </list>
     </option>
   </component>
@@ -224,6 +251,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PP Trabajos/lab 6/lab6.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -237,26 +265,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.modificado">
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Consultorio medico" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.ejemplo">
     <configuration default="false" name="Principal" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -328,6 +337,25 @@
       <module name="Consultorio medico" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modificaciones Cristian/ffff.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ejemplo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modificaciones Cristian" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Consultorio medico" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modificaciones Cristian/ejemplo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -482,19 +510,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Principal" />
-      <item index="2" class="java.lang.String" itemvalue="Python.modificado" />
-      <item index="3" class="java.lang.String" itemvalue="Python.proyecto cris" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ffff" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Principal" />
+      <item index="1" class="java.lang.String" itemvalue="Python.modificado" />
+      <item index="2" class="java.lang.String" itemvalue="Python.proyecto cris" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ffff" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ejemplo" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.modificado" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ffff" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Principal" />
-        <item index="3" class="java.lang.String" itemvalue="Python.proyecto cris" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ejemplo" />
+        <item index="1" class="java.lang.String" itemvalue="Python.modificado" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ffff" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Principal" />
+        <item index="4" class="java.lang.String" itemvalue="Python.proyecto cris" />
       </list>
     </recent_temporary>
   </component>
@@ -533,14 +561,20 @@
       <option name="project" value="LOCAL" />
       <updated>1503113680024</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="nuevo">
+      <created>1503158508036</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1503158508037</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22327965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="401" y="47" width="551" height="634" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13909224" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="401" y="47" width="551" height="634" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -606,12 +640,11 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/proyectoProgra (1).py" />
     <entry file="file://$PROJECT_DIR$/clases acomodadad.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/pruebasProyecto.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -743,7 +776,7 @@
     <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/proyecto cris.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="245" column="46" lean-forward="true" selection-start-line="245" selection-start-column="46" selection-end-line="245" selection-end-column="46" />
+          <caret line="245" column="46" lean-forward="false" selection-start-line="245" selection-start-column="46" selection-end-line="245" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -758,10 +791,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/modificado.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="41" column="92" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="92" />
+        <state relative-caret-position="192">
+          <caret line="84" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
           <folding>
-            <element signature="e#3689#4306#0" expanded="false" />
             <element signature="e#4357#6474#0" expanded="false" />
             <element signature="e#6537#7203#0" expanded="false" />
             <element signature="e#7270#7700#0" expanded="false" />
@@ -785,9 +817,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/ejemplo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state relative-caret-position="1848">
+          <caret line="95" column="10" lean-forward="false" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#3939#6630#0" expanded="false" />
+            <element signature="e#6679#7650#0" expanded="false" />
+            <element signature="e#7987#8653#0" expanded="false" />
+            <element signature="e#8720#9150#0" expanded="false" />
+            <element signature="e#9241#9572#0" expanded="false" />
+            <element signature="e#9627#9945#0" expanded="false" />
+            <element signature="e#10018#10180#0" expanded="false" />
+            <element signature="e#10220#10560#0" expanded="false" />
+            <element signature="e#10731#11297#0" expanded="false" />
+            <element signature="e#11360#11764#0" expanded="false" />
+            <element signature="e#11826#15002#0" expanded="false" />
+            <element signature="e#12319#14887#0" expanded="false" />
+            <element signature="e#15062#15214#0" expanded="false" />
+            <element signature="e#15254#15473#0" expanded="false" />
+            <element signature="e#15534#16183#0" expanded="false" />
+            <element signature="e#16259#17230#0" expanded="false" />
+            <marker date="1503176908616" expanded="false" signature="17279:18080" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
