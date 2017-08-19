@@ -16,9 +16,11 @@ v=""
 ced = int(input("cedula: "))
 for x in lista:
     if ced == x.id:
-        print("Yeah")
+        v=True
         break
     if ced != x.id:
         v = False
 if v == False:
     print("id no esta en lista")
+nombre=input("nombre: ")
+print("Cedula: {}\nNombre: {}".format(ced,nombre))
