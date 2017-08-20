@@ -244,12 +244,7 @@ def menuPrincipalMedicos (listaPersonas):#1.1.1
             print("id no esta en lista")
 
     elif opMedico =="4":
-        id = str(input("Digite la cedula:"))
-        nombreMedi = str(input("Digite el nombre del medicamento:"))
-        formaMedi = str(input("Digite la forma de tomar el medicamento"))  # Recomendacion
-        cantiDias = str(input("Digite la cantidad de dias:"))
-        registroRecetas = Recetas(id, nombreMedi, formaMedi, cantiDias)
-        listaRecetas.append(registroRecetas)
+
     elif opMedico =="5":
         print("Gracias por preferirnos")
 
@@ -277,29 +272,10 @@ def ConsultarCita():
         menuPrincipalMedicos(listaPersonas)
 
 
-#Menu Consultar Citas
-import time
-def citasDia():#Colocar bien el formato de la fecha.
-    result=""
-    for x in listaCitas:
-        if x.fecha==time.strftime("%x"):
-            result += x.id + " " + x.paciente + " " + x.hora
-            result += "\n"
-            print("Cedula:{}\nPaciente:{}\nHora:{}".format(x.id, x.paciente, x.hora))
-        elif x.fecha!=time.strftime("&x"):
-            print("No tiene citas ")
 
-#Menu Consultar Citas
 
 def fechaEspecifica(fecha):
-    result = ""
-    for x in listaCitas:
-        if x.fecha == fecha:
-            result += x.id + " " + x.paciente + " " + x.hora
-            result += "\n"
-            print ("Cedula:{}\nPaciente:{}\nHora:{}".format(x.id,x.paciente,x.hora))
-        elif x .fecha!=fecha:
-            print("No tiene Citas esta fecha")
+
 
 
 #Funciones de la opcion Receta
@@ -426,15 +402,7 @@ def iniciar_seccion_paciente(listaPersonas):
 
 
 def citasPendientes(listaCitas):
-    result = ""
-    for x in listaCitas:
-        if x.fecha > time.strftime("%x") and x.hora > time.strftime("%I:%M:%S") :
-            result += x.fecha + " " + x.hora + " "
-            result += "\n"
-            print("Fecha:{}\nHora:{}".format(x.fecha ,x.hora))
-        elif x.fecha < time.strftime("%x") and x.hora < time.strftime("%I:%M:%S") :
-            print ("No tiene citas  pendientes")
-            menuInicio(listaPersonas,listaCitas)
+
 
 def menuPrincipalPaciente(ListaPersonas):
 

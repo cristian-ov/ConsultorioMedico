@@ -60,20 +60,20 @@
       <file leaf-file-name="menos metodos.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="266" column="37" lean-forward="false" selection-start-line="266" selection-start-column="37" selection-end-line="266" selection-end-column="37" />
+            <state relative-caret-position="4752">
+              <caret line="481" column="43" lean-forward="false" selection-start-line="481" selection-start-column="43" selection-end-line="481" selection-end-column="43" />
               <folding>
-                <element signature="e#2139#2391#0" expanded="false" />
-                <element signature="e#2185#2251#0" expanded="false" />
-                <element signature="e#2410#2761#0" expanded="false" />
-                <element signature="e#2790#3242#0" expanded="false" />
-                <element signature="e#9573#10789#0" expanded="false" />
-                <element signature="e#13893#14875#0" expanded="false" />
-                <element signature="e#14913#15742#0" expanded="false" />
-                <element signature="e#15780#19480#0" expanded="false" />
-                <element signature="e#15877#19480#0" expanded="false" />
-                <element signature="e#19518#19614#0" expanded="false" />
-                <marker date="1503202415975" expanded="false" signature="12246:13406" ph="..." />
+                <element signature="e#4822#7595#0" expanded="false" />
+                <element signature="e#7660#8569#0" expanded="false" />
+                <element signature="e#8636#9019#0" expanded="false" />
+                <element signature="e#15014#15861#0" expanded="false" />
+                <element signature="e#20642#21249#0" expanded="false" />
+                <marker date="1503204996839" expanded="false" signature="9608:10859" ph="..." />
+                <marker date="1503204996839" expanded="false" signature="10886:11874" ph="..." />
+                <marker date="1503204996839" expanded="false" signature="11908:13042" ph="..." />
+                <marker date="1503204996839" expanded="false" signature="13076:13478" ph="..." />
+                <marker date="1503204996839" expanded="false" signature="13930:14966" ph="..." />
+                <marker date="1503204996839" expanded="false" signature="15892:19952" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,8 +82,8 @@
       <file leaf-file-name="nuevo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nuevo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="217" column="39" lean-forward="true" selection-start-line="198" selection-start-column="8" selection-end-line="217" selection-end-column="39" />
+            <state relative-caret-position="72">
+              <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#46#1002#0" expanded="false" />
@@ -92,6 +92,7 @@
                 <element signature="e#1984#2732#0" expanded="false" />
                 <element signature="e#4082#4954#0" expanded="false" />
                 <element signature="e#5391#7515#0" expanded="false" />
+                <element signature="e#7895#8978#0" expanded="false" />
                 <element signature="e#9013#10287#0" expanded="false" />
               </folding>
             </state>
@@ -585,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503197769354</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="nuevo">
+      <created>1503202489453</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1503202489453</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -657,13 +665,8 @@
           <line>16</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -853,8 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nuevo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="217" column="39" lean-forward="true" selection-start-line="198" selection-start-column="8" selection-end-line="217" selection-end-column="39" />
+        <state relative-caret-position="72">
+          <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#46#1002#0" expanded="false" />
@@ -863,6 +866,7 @@
             <element signature="e#1984#2732#0" expanded="false" />
             <element signature="e#4082#4954#0" expanded="false" />
             <element signature="e#5391#7515#0" expanded="false" />
+            <element signature="e#7895#8978#0" expanded="false" />
             <element signature="e#9013#10287#0" expanded="false" />
           </folding>
         </state>
@@ -870,20 +874,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="266" column="37" lean-forward="false" selection-start-line="266" selection-start-column="37" selection-end-line="266" selection-end-column="37" />
+        <state relative-caret-position="4752">
+          <caret line="481" column="43" lean-forward="false" selection-start-line="481" selection-start-column="43" selection-end-line="481" selection-end-column="43" />
           <folding>
-            <element signature="e#2139#2391#0" expanded="false" />
-            <element signature="e#2185#2251#0" expanded="false" />
-            <element signature="e#2410#2761#0" expanded="false" />
-            <element signature="e#2790#3242#0" expanded="false" />
-            <element signature="e#9573#10789#0" expanded="false" />
-            <element signature="e#13893#14875#0" expanded="false" />
-            <element signature="e#14913#15742#0" expanded="false" />
-            <element signature="e#15780#19480#0" expanded="false" />
-            <element signature="e#15877#19480#0" expanded="false" />
-            <element signature="e#19518#19614#0" expanded="false" />
-            <marker date="1503202415975" expanded="false" signature="12246:13406" ph="..." />
+            <element signature="e#4822#7595#0" expanded="false" />
+            <element signature="e#7660#8569#0" expanded="false" />
+            <element signature="e#8636#9019#0" expanded="false" />
+            <element signature="e#15014#15861#0" expanded="false" />
+            <element signature="e#20642#21249#0" expanded="false" />
+            <marker date="1503204996839" expanded="false" signature="9608:10859" ph="..." />
+            <marker date="1503204996839" expanded="false" signature="10886:11874" ph="..." />
+            <marker date="1503204996839" expanded="false" signature="11908:13042" ph="..." />
+            <marker date="1503204996839" expanded="false" signature="13076:13478" ph="..." />
+            <marker date="1503204996839" expanded="false" signature="13930:14966" ph="..." />
+            <marker date="1503204996839" expanded="false" signature="15892:19952" ph="..." />
           </folding>
         </state>
       </provider>

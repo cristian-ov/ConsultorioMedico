@@ -108,18 +108,13 @@ cita = Citas("19/8/17","04",medico1.nombre)
 pac.citaPac(cita)
 citas.append(cita)
 
-
-rece = Receta("Alka-D","3 veces al dia cada 8 hrs","4 dias")
-pac.medicamento(rece)
-recetas.append(rece)
-
-
 atencion = AtencionPaciente("Esfinter sensible","10","Ano","Diarrea",medico1.nombre)
 pac.atender(atencion)
 atencionpaciente.append(atencion)
 
-
-
+rece = Receta("Alka-D","3 veces al dia cada 8 hrs","4 dias")
+pac.medicamento(rece)
+recetas.append(rece)
 
 def menuInicio(listaPersonas,citas,atencionpaciente,recetas):
     while True:
@@ -185,7 +180,8 @@ def menuInicio(listaPersonas,citas,atencionpaciente,recetas):
                         print("\nCedula o contraseña invalida\n")
                     elif valorI == False and valorC == False:
                         print("\nCedula o contraseña invalida\n")
-            elif opMenuIni== 2: #Validar
+
+            elif opMenuIni== 2: #Validar Datos
                 id = str(input("Digite la cedula: "))
                 contraseña = str(input("Digite la contraseña: "))
                 nombre = str(input("Digite el nombre: "))
@@ -201,21 +197,23 @@ def menuInicio(listaPersonas,citas,atencionpaciente,recetas):
                 listaPersonas.append(objregistro)
 
                 menuInicio(listaPersonas,citas,atencionpaciente,recetas)
-            elif opMenuIni ==3:
+            ####
+            elif opMenuIni == 3:
                 cedula = str(input("Digete la cedula:"))
                 for x in listaPersonas:
                     if x.id == cedula:
-                        menuPrincipalPaciente(listaPersonas)
+                        menuPrincipalPaciente(listaPersonas,citas,atencionpaciente,recetas)
 
                     elif x.id != cedula:
                         print("Cedula invalida")
                         menuInicio(listaPersonas,citas,atencionpaciente,recetas)
+
             elif opMenuIni == 4:
                 print("\n\nGracias por preferirnos\n")
                 break
         except ValueError:
             print("\n\nMe cago en TODO lo que se menea\nNO DEBES PONER LETRAS O MUCHOS NUMEROS A LA VEZ\nSTEEE MENNNN  :V")
-#LISTO!!
+
 
 
 
@@ -235,7 +233,6 @@ def menuPrincipalMedicos (listaPersonas,citas,atencionpaciente,recetas):#1.1.1
               "2-Fecha expecifica\n"
               "3-Salir")
         opCita = int(input("Seleccione una opcion: "))
-
         if opCita == 1:
             result = ""
             for x in citas:
@@ -245,6 +242,7 @@ def menuPrincipalMedicos (listaPersonas,citas,atencionpaciente,recetas):#1.1.1
                     print("Cedula:{}\nPaciente:{}\nHora:{}".format(x.id, x.paciente, x.hora))
                 elif x.fecha != time.strftime("&x"):
                     print("No tiene citas ")
+
         elif opCita == 2:
             fecha = str(input("Digite la fecha:"))
             result = ""
@@ -255,34 +253,33 @@ def menuPrincipalMedicos (listaPersonas,citas,atencionpaciente,recetas):#1.1.1
                     print("Cedula:{}\nPaciente:{}\nHora:{}".format(x.id, x.paciente, x.hora))
                 elif x.fecha != fecha:
                     print("No tiene Citas esta fecha")
+
         elif opCita == 3:
             print("Gracias por preferirnos\n")
-            menuPrincipalMedicos(listaPersonas,citas)
+            menuPrincipalMedicos(listaPersonas,citas,atencionpaciente,recetas)
 
     elif opMedico == "2":
         while True:
             ced = str(input("Digite la cedula :"))
             for x in listaPersonas:
-               if ced == x.id:
-                   print("Paciente:  ",x.nombre)
-                    for i in x.cita:
-                        fecha = str(input("Digete la fecha :"))
-                        hora = str(input("Digete la hora :"))
-                        padecimiento = (input("Digete el padecimiento : "))
-                        doctor = input("Digete el nombre del doctor: ")
-                        registroCitas = Citas(id, paciente, fecha, hora, padecimiento, doctor)
-                        listaCitas.append(registroCitas)
-                        print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\npadecimiento:{}\ndoctor:{}".format(id, paciente, fecha,
-                                                                                                              hora,
-                                                                                                              padecimiento, doctor))
-                        op = input("Desea registrar otra cita s/n ")
-                        if op == "s":
-                            pass
-                        elif op == "n":
-                            menuPrincipalSecretaria(listaPersonas, listaCitas)
-                            break
-                        else:
-                            print("Valor invalido")
+                if ced == x.id:
+                    print("Paciente: ",x.nombre)#revisar For
+                fecha = str(input("Digete la fecha :"))
+                hora = str(input("Digete la hora :"))
+                padecimiento = (input("Digete el padecimiento : "))
+                doctor = input("Digete el nombre del doctor: ")
+                #Terminar guardar datos
+                print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\npadecimiento:{}\ndoctor:{}"
+                           .format(ced,paciente,fecha,hora,padecimiento,doctor))
+                op = input("Desea registrar otra cita s/n ")
+                if op == "s":
+                    pass
+                elif op == "n":
+                    menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas)
+                    break
+                else:
+                    print("Valor invalido")
+    ####
     elif opMedico =="3":
         v=""
         cedula = int(input("cedula: "))
@@ -293,8 +290,8 @@ def menuPrincipalMedicos (listaPersonas,citas,atencionpaciente,recetas):#1.1.1
                         print("usted esta a tiempo para la cita")
                         fecha = str(input("Digete la fecha:"))
                         sintomas = str(input("Digete los sintomas: "))
-                        nivelDolor = str(input("Digete el nivel de dolor:"))  # Rango de dolor
-                        posicion = str(input("Digete la posicion:"))  # Area
+                        nivelDolor = str(input("Digete el nivel de dolor:"))
+                        posicion = str(input("Digete la posicion:"))
                         diagnostico = str(input("Digete el diagnostico:"))
                         doctor = str(input("Digete el doctor"))
                         receta = str(input("Digete la receta"))
@@ -305,9 +302,16 @@ def menuPrincipalMedicos (listaPersonas,citas,atencionpaciente,recetas):#1.1.1
                 v = False
         if v == False:
             print("id no esta en lista")
-
+    ####
     elif opMedico =="4":
-        pass
+        ced = str(input("Digete la cedula del paciente: "))
+        for r in listaPersonas:
+            if ced == r.id:#terminar
+                nombreMedi = str(input("Digite el nombre del medicamento:"))
+                formaMedi = str(input("Digite la forma de tomar el medicamento"))  # Recomendacion
+                cantiDias = str(input("Digite la cantidad de dias:"))
+                # Terminar
+    ####
     elif opMedico =="5":
         print("Gracias por preferirnos")
 
@@ -315,23 +319,23 @@ def menuPrincipalMedicos (listaPersonas,citas,atencionpaciente,recetas):#1.1.1
 
 def menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas):
 
-   print("\n1-Registrar cita\n"
+    print("\n1-Registrar cita\n"
                    "2-Imprimir comprobante\n"
                    "3-Registrar paciente \n"
                    "4-Salir\n ")
 
 
-   opSecretaria=input("Seleccione una opcion: ")
+    opSecretaria=input("Seleccione una opcion: ")
 
-   if opSecretaria == "1":
-       while True:
+    if opSecretaria == "1":
+        while True:
            id = str(input("Digite la cedula :"))
            fecha = str(input("Digete la fecha :"))
            hora = str(input("Digete la hora :"))
            padecimiento = (input("Digete el padecimiento : "))
            doctor = input("Digete el nombre del doctor: ")
            registroCitas = Citas(fecha, hora, doctor)
-           citas.append(registroCitas)
+           citas.append(registroCitas)#Revisar
            print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\npadecimiento:{}\ndoctor:{}".format(id, paciente, fecha,
                                                                                                  hora,
                                                                                                  padecimiento, doctor))
@@ -339,138 +343,131 @@ def menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas):
            if op == "s":
                pass
            elif op == "n":
-               menuPrincipalSecretaria(listaPersonas, citas)
+               menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas)
                break
            else:
                print("Valor invalido")
+        ####
+    ####
+    elif opSecretaria == "2":
+        cedula = str(input("Digete la cedula del paciente: "))
+        fecha = str(input("Digete la fecha de la cita: "))
+        for x in atencionpaciente:
+            if x.id == cedula and x.fecha == fecha:
+                print("Nombre del paciente: {}\nConsultorio medico: Digitaldoctor\n"
+                        "Medico: {}\nFecha: {}\nDiagnostico: {}"
+                        .format(x.nombre, x.doctor, x.fecha, x.diagnostico))
+                menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas)
+                break
 
-   elif opSecretaria == "2":
-       cedula = str(input("Digete la cedula del paciente: "))
-       fecha = str(input("Digete la fecha de la cita: "))
-       for x in atencionpaciente:
-           if x.id == cedula and x.fecha == fecha:
-               print("Nombre del paciente: {}\nConsultorio medico: Digitaldoctor\n"
-                     "Medico: {}\nFecha: {}\nDiagnostico: {}"
-                     .format(x.nombre, x.doctor, x.fecha, x.diagnostico))
-               menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas)
-               break
+            elif x.id != cedula and x.fecha != fecha:
+                print("Cedula o fecha invalida")
 
-           elif x.id != cedula and x.fecha != fecha:
-               print("Cedula o fecha invalida")
+            elif x.id == cedula and x.fecha != fecha:
+                print("Cedula o fecha invalida")
 
-           elif x.id == cedula and x.fecha != fecha:
-               print("Cedula o fecha invalida")
+            elif x.id != cedula and x.fecha == fecha:
+                print("Cedula o fecha invalida")
 
-           elif x.id != cedula and x.fecha == fecha:
-               print("Cedula o fecha invalida")
-
-   elif opSecretaria == "3":
-       existe = ""
-       existe2 = ""
-       doc = ""
-       nombre = ""
-       while True:
-           while True:
-               try:
-                   cedula = int(input("Datos Paciente:\n\nDigite el número de cedula: "))
-                   if (cedula > 999999999) or (cedula < 100000000):
-                       print("\n\nLa cedula debe tener '9' digitos\n\nSUBNORMAL!!\n\n"
-                             "En caso de tener cedula de Extranjero,\n comuniquese con el area de 'TI"
-                             "\n\n Gracias..")
-                   else:
-                       for i in listaPersonas:
-                           if i.id == id:
-                               existe = True
-                               break
-                           elif i.id != id:
-                               existe = False
-                       if existe == True:
-                           print("\n\nLa cedula esta ya registrada.\n\n")
-                       break
-               except ValueError:
-                   print("\n\nMAMON!\nNO PONGAS LETRAS EN LA CEDULA!!!\n")
-           while True:
-               try:
-                   nombre = str(input("Digite el nombre: "))
-                   if nombre.isalpha():
-                       break
-                   else:
-                       print("\n\nNo pueden haber numeros o simbolos en un nombre\n\n")
-               except:
-                   print("Valor invalido")
-           while True:
-               try:
-                   fechaNacimiento = str(input("Digete la fecha :"))
-                   for v in fechaNacimiento:
-                       if v.isalpha():
-                           print("Esta Fecha {}, contiene letras..."
-                                 "\nEL FORMATO DE FECHA ES ASI: dd/mm/aaaa"
-                                 "\n\nMAMON\n\nDigite de nuevo.".format(fechaNacimiento))
+    elif opSecretaria == "3":
+        existe = ""
+        existe2 = ""
+        doc = ""
+        nombre = ""
+        while True:
+               while True:
+                   try:
+                       cedula = int(input("Datos Paciente:\n\nDigite el número de cedula: "))
+                       if (cedula > 999999999) or (cedula < 100000000):
+                           print("\n\nLa cedula debe tener '9' digitos\n\nSUBNORMAL!!\n\n"
+                                 "En caso de tener cedula de Extranjero,\n comuniquese con el area de 'TI"
+                                 "\n\n Gracias..")
+                       else:
+                           for i in listaPersonas:
+                               if i.id == id:
+                                   existe = True
+                                   break
+                               elif i.id != id:
+                                   existe = False
+                           if existe == True:
+                               print("\n\nLa cedula esta ya registrada.\n\n")
+                           break
+                   except ValueError:
+                       print("\n\nMAMON!\nNO PONGAS LETRAS EN LA CEDULA!!!\n")
+               while True:
+                   try:
+                       nombre = str(input("Digite el nombre: "))
+                       if nombre.isalpha():
                            break
                        else:
-                           pass
-                   break
-               except:
-                   pass
-           correo = str(input("Digete el correo: "))
-           direccion = str(input("Digite la dirección: "))
-           while True:
-               edad = int(input("Digite la edad:"))
-               try:
-                   if edad <= 100:
+                           print("\n\nNo pueden haber numeros o simbolos en un nombre\n\n")
+                   except:
+                       print("Valor invalido")
+               while True:
+                   try:
+                       fechaNacimiento = str(input("Digete la fecha :"))
+                       for v in fechaNacimiento:
+                           if v.isalpha():
+                               print("Esta Fecha {}, contiene letras..."
+                                     "\nEL FORMATO DE FECHA ES ASI: dd/mm/aaaa"
+                                     "\n\nMAMON\n\nDigite de nuevo.".format(fechaNacimiento))
+                               break
+                           else:
+                               pass
                        break
-                   elif edad > 100:
-                       print("Edad Invalida")
-               except ValueError:
-                   print("Error")
-           while True:
-               genero = str(input("Digite el genero del paciente: "))
-               try:
-                   if genero == "Masculino" or genero == "Femenino":
-                        break
-                   elif genero != "Masculino" or genero != "Femenino":
-                        print("Error Invalida")
-               except:
-                   print("Valor invalido")
-           telefono = str(input("Digite el telefono: "))
-           padecimiento = str(input("Digite el padecimiento: "))
-           print("Doctores:")
-           for t in listaPersonas:
-               if t.tipo_usuario == "Medico":  # Revisar este proceso
-                   print("Doctor:", t.nombre)
+                   except:
+                       pass
+               correo = str(input("Digete el correo: "))
+               direccion = str(input("Digite la dirección: "))
+               while True:
+                   edad = int(input("Digite la edad:"))
+                   try:
+                       if edad <= 100:
+                           break
+                       elif edad > 100:
+                           print("Edad Invalida")
+                   except ValueError:
+                       print("Error")
+               while True:
+                   genero = str(input("Digite el genero del paciente: "))
+                   try:
+                       if genero == "Masculino" or genero == "Femenino":
+                            break
+                       elif genero != "Masculino" or genero != "Femenino":
+                            print("Error Invalida")
+                   except:
+                       print("Valor invalido")
+               telefono = str(input("Digite el telefono: "))
+               padecimiento = str(input("Digite el padecimiento: "))
+               print("Doctores:")
+               for t in listaPersonas:
+                   if t.tipo_usuario == "Medico":  # Revisar este proceso
+                       print("Doctor:", t.nombre)
 
-           doctor = input("Digete el nombre del doctor: ")
-           for l in listaPersonas:
-               if doctor == l.nombre:
-                   existe2 = True
+               doctor = input("Digete el nombre del doctor: ")
+               for l in listaPersonas:
+                   if doctor == l.nombre:
+                       existe2 = True
+                       break
+                   elif doctor != l.nombre:
+                       existe2 = False
+                   else:
+                       existe2 = False
+               if existe2 == True:
+                   Paciente = paciente(cedula,cedula,fechaNacimiento,correo,direccion,
+                                       edad,genero,telefono,padecimiento,doctor,"Paciente")#Revisar
+                   print(citas[-1])
                    break
-               elif doctor != l.nombre:
-                   existe2 = False
-               else:
-                   existe2 = False
-           if existe2 == True:
-               Paciente = paciente(cedula,cedula,fechaNacimiento,correo,direccion,
-                                   edad,genero,telefono,padecimiento,doctor)
-               print(citas[-1])
-               break
-
-   elif opSecretaria == "4":
-       print("Gracias por preferirnos")
-       menuInicio(listaPersonas,citas,atencionpaciente,recetas)
+    ####
+    elif opSecretaria == "4":
+        print("Gracias por preferirnos")
+        menuInicio(listaPersonas,citas,atencionpaciente,recetas)
 
 
 
 
 
-def citasPendientes(citas):
-    result = ""
-    for x in citas:
-        if x.fecha < time.strftime("%x"):
-            result += x.fecha + " " + x.hora + " "
-            result += "\n"
-            print("Fecha:{}\nHora:{}".format(x.fecha ,x.hora))
-
-def menuPrincipalPaciente(ListaPersonas):
+def menuPrincipalPaciente(listaPersonas,citas,atencionpaciente,recetas):
 
                 print("1-Ultimas 3 recetas\n"
                       "2-Expediente Medico\n"
@@ -480,32 +477,23 @@ def menuPrincipalPaciente(ListaPersonas):
                 opPaciente = int(input("Digete una opción: "))
 
                 if opPaciente == 1:
-                    pass
+                    pass #Con el -1        ####
                 elif opPaciente == 2:
-                    pass
+                    pass #esquema arriba   ####
                 elif opPaciente == 3:
-                    for x in listaPersonas:
-                        if x.tipo_usuario == "Paciente":
-                            cedula = str(input("Digete la cedula:"))
-                            menuPrincipalPaciente(listaPersonas)
+                    result = ""
+                    for x in citas:
+                        if x.fecha > time.strftime("%x") and x.hora > time.strftime("%I:%M:%S"):
+                            result += x.fecha + " " + x.hora + " "
+                            result += "\n"
+                            print("Fecha:{}\nHora:{}".format(x.fecha, x.hora))
+                        elif x.fecha < time.strftime("%x") and x.hora < time.strftime("%I:%M:%S"):
+                            print("No tiene citas  pendientes")
+                            menuInicio(listaPersonas,citas,atencionpaciente,recetas)#terminar
+                ####
                 elif opPaciente == 4:
                     print ("Gracias por escogernos:")
-                    menuInicio(listaPersonas)
-
-
-
-
-
-
-
-
-                    #1.1.2
-#opciones menu secretaria
-
-
-
-
-
+                    menuInicio(listaPersonas,citas,atencionpaciente,recetas)
 
 
 # Programa Principal:
