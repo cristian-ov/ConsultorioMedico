@@ -329,11 +329,11 @@ def menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas):
 
     if opSecretaria == "1":
         while True:
-           id = str(input("Digite la cedula :"))
+           id = str(input("Digite la cedula :"))#verificar id y cantidad de citas semana
            fecha = str(input("Digete la fecha :"))
            hora = str(input("Digete la hora :"))
            padecimiento = (input("Digete el padecimiento : "))
-           doctor = input("Digete el nombre del doctor: ")
+           doctor = input("Digete el nombre del doctor: ")#validar doctor
            registroCitas = Citas(fecha, hora, doctor)
            citas.append(registroCitas)#Revisar
            print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\npadecimiento:{}\ndoctor:{}".format(id, paciente, fecha,
@@ -347,7 +347,6 @@ def menuPrincipalSecretaria(listaPersonas,citas,atencionpaciente,recetas):
                break
            else:
                print("Valor invalido")
-        ####
     ####
     elif opSecretaria == "2":
         cedula = str(input("Digete la cedula del paciente: "))
