@@ -1,4 +1,5 @@
 import random
+import time
 
 class Persona:
     def __init__(self,id,nombre,contraseña,fechaNacimiento,correo,direccion,edad,genero,telefono,tipo_usuario,padecimiento):
@@ -217,7 +218,31 @@ def menuPrincipalMedicos (listaPersonas):#1.1.1
                 print("Valor invalido")
 
     elif opMedico =="3":
-        atenderPaciente(listaAtenderPacientes,listaCitas)
+        cedula = int(input("cedula: "))
+        for x in listaCitas:
+            if cedula == x.id:
+                if time.strftime("%x") == x.fecha and time.strftime("%I") == x.hora:
+                    print("usted esta a tiempo para la cita")
+
+                elif time.strftime("%x") != x.fecha or (time.strftime("%I") != x.hora or time.strftime("%I") < x.hora):
+                    print("Cita no registrada o atrasada")
+
+                fecha = str(input("Digete la fecha:"))
+                sintomas = str(input("Digete los sintomas: "))
+                nivelDolor = str(input("Digete el nivel de dolor:"))  # Rango de dolor
+                posicion = str(input("Digete la posicion:"))  # Area
+                diagnostico = str(input("Digete el diagnostico:"))
+                doctor = str(input("Digete el doctor"))
+                receta = str(input("Digete la receta"))
+                registroAtencionPaciente = AtencionPaciente(fecha, sintomas, nivelDolor, posicion, diagnostico,
+                                                            doctor, receta)
+                listaAtenderPacientes.append(registroAtencionPaciente)
+                break
+            if cedula != x.id:
+                v = False
+        if v == False:
+            print("id no esta en lista")
+
     elif opMedico =="4":
         id = str(input("Digite la cedula:"))
         nombreMedi = str(input("Digite el nombre del medicamento:"))
@@ -291,32 +316,6 @@ def receta(listaAtenderPacientes,id):
 
 
 
-def atenderPaciente(listaAtenderPacientes,listaCitas,):
-    import time
-    cedula = int(input("cedula: "))
-    for x in listaCitas:
-        if cedula == x.id:
-            if time.strftime("%x") == x.fecha and time.strftime("%I") ==x.hora:
-                print("usted esta a tiempo para la cita")
-
-            elif time.strftime("%x") != x.fecha or (time.strftime("%I") != x.hora or time.strftime("%I") <x.hora ):
-                print("Cita no registrada o atrasada")
-
-            fecha = str(input("Digete la fecha:"))
-            sintomas = str(input("Digete los sintomas: "))
-            nivelDolor = str(input("Digete el nivel de dolor:"))  # Rango de dolor
-            posicion = str(input("Digete la posicion:"))  # Area
-            diagnostico = str(input("Digete el diagnostico:"))
-            doctor = str(input("Digete el doctor"))
-            receta = str(input("Digete la receta"))
-            registroAtencionPaciente = AtencionPaciente(fecha,sintomas, nivelDolor, posicion, diagnostico,
-                                                                                                 doctor, receta)
-            listaAtenderPacientes.append(registroAtencionPaciente)
-            break
-        if cedula != x.id:
-            v = False
-    if v == False:
-        print("id no esta en lista")
 
 
 
