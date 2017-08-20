@@ -1,10 +1,10 @@
 import time
 
 class Persona:
-    def __init__(self,id,nombre,contraseña,fechaNacimiento,correo,direccion,edad,genero,telefono,tipo_usuario):
+    def __init__(self,id,nombre,clave,fechaNacimiento,correo,direccion,edad,genero,telefono,tipo_usuario):
         self.id = id
         self.nombre = nombre
-        self.contraseña = contraseña
+        self.clave= clave
         self.fechaNacimiento = fechaNacimiento
         self.correo = correo
         self.direccion = direccion
@@ -15,7 +15,7 @@ class Persona:
 
     def __str__(self):
         return ("Cedula = {}\n Nombre = {}\n contraseña = {}\n Fecha Nacimiento = {}\n "
-                "Correo = {}\n Direccion = {}\n edad = {}\n genero = {}\n telefono = {}\n Tipo de usuario = {}".format(self.id,self.nombre,self.contraseña,
+                "Correo = {}\n Direccion = {}\n edad = {}\n genero = {}\n telefono = {}\n Tipo de usuario = {}".format(self.id,self.nombre,self.clave,
                                                               self.fechaNacimiento,self.correo,self.direccion,self.edad,self.genero,self.telefono,self.tipo_usuario))
 class paciente:
     def __init__(self,id,nombre,fechaNacimiento,correo,direcion,edad,genero,
@@ -107,6 +107,7 @@ funcionarios.append(maria)
 pac = paciente(456,"Rodolfo","04/10/98","sacodecaca@cr.com","El bajo del Soncho",25,
                "Masculino","8865-4435","Hemorroides Cronica","Paciente",medico1.nombre)
 pacientes.append(pac)
+
 cita = Citas("08/20/17","01",medico1.nombre)
 pac.citaPac(cita)
 citas.append(cita)
@@ -140,7 +141,7 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                             print("\n\nMAMON!\nNO PONGAS LETRAS EN LA CEDULA!!!\n")
                     while True:
                         try:
-                            contraseña = str(input("Digite su contraseña: "))
+                            clave = str(input("Digite su contraseña: "))
                             if contraseña.isalnum():
                                 break
                             else:
@@ -186,7 +187,7 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
 
             elif opMenuIni== 2: #Validar Datos
                      id = str(input("Digite la cedula: "))
-                     contraseña = str(input("Digite la contraseña: "))
+                     clave = str(input("Digite la contraseña: "))
                      nombre = str(input("Digite el nombre: "))
                      fechaNacimiento = str(input("Digete  la fecha de nacimiento: "))
                      correo = str(input("Digete el correo: "))
@@ -489,10 +490,6 @@ def menuPrincipalSecretaria(funcionarios,pacientes,citas,atencionpaciente,receta
         print("Gracias por preferirnos")
         menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
 
-
-
-
-
 def menuPrincipalPaciente(funcionarios,pacientes,citas,atencionpaciente,recetas):
 
                 print("1-Ultimas 3 recetas\n"
@@ -521,13 +518,7 @@ def menuPrincipalPaciente(funcionarios,pacientes,citas,atencionpaciente,recetas)
                     print ("Gracias por escogernos:")
                     menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
 
-
 # Programa Principal:
 
 print(time.strftime("%x"))
 menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
-
-#time.strftime("%I:%M:%S")#hora
-
-
-
