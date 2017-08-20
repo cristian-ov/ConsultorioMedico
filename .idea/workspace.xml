@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32a3a68f-84a3-4e4f-bd60-2896ff328938" name="Default" comment="nuevo">
+    <list default="true" id="32a3a68f-84a3-4e4f-bd60-2896ff328938" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +80,8 @@
       <file leaf-file-name="7_10(1).py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/7_10(1).py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="274" column="20" lean-forward="false" selection-start-line="274" selection-start-column="20" selection-end-line="274" selection-end-column="20" />
+            <state relative-caret-position="456">
+              <caret line="285" column="38" lean-forward="false" selection-start-line="285" selection-start-column="38" selection-end-line="285" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -624,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503238925204</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="nuevo">
+      <created>1503238986230</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1503238986231</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -890,8 +897,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/7_10(1).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="274" column="20" lean-forward="false" selection-start-line="274" selection-start-column="20" selection-end-line="274" selection-end-column="20" />
+        <state relative-caret-position="456">
+          <caret line="285" column="38" lean-forward="false" selection-start-line="285" selection-start-column="38" selection-end-line="285" selection-end-column="38" />
           <folding />
         </state>
       </provider>
