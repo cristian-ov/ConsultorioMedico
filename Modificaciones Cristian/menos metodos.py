@@ -50,7 +50,7 @@ class paciente:
             re = r
 
         return ("Expediente:\n\nCedula = {}\nNombre = {}\nFecha de Nacimiento = {}\n"
-                "Padecimiento = {}\nMedico = {}\n\nCitas:\n{}\nDiagnostico:\n\n{}\nRecetas:\n{}".format(self.id,self.nombre,
+                "Padecimiento = {}\nMedico = {}\n\nCitas:\n{}\nDiagnostico:\n{}\n\nRecetas:\n{}".format(self.id,self.nombre,
                                                          self.fechaNacimiento,
                                                          self.padecimiento,self.medico,ci,at,re))
 class Citas:
@@ -83,7 +83,6 @@ class AtencionPaciente:
             return ("Sintomas:{}\nNivel de dolor: {}\nPosicion: {}\nDiagnostico: {}\nDoctor: {}"
                     .format(self.sintomas,self.nivelDolor,self.posicion,self.diagnostico,self.doctor))
 
-
 listaPersonas =[]
 citas = []
 atencionpaciente = []
@@ -104,12 +103,23 @@ listaPersonas.append(maria)
 #Pacientes y diagnostico:
 pac = paciente(456,"Rodolfo","04/10/98","sacodecaca@cr.com","El bajo del Soncho",25,
                "Masculino","8865-4435","Hemorroides Cronica",medico1.nombre)
+listaPersonas.append(pac)
 cita = Citas("19/8/17","04",medico1.nombre)
 pac.citaPac(cita)
+citas.append(cita)
+
+
 rece = Receta("Alka-D","3 veces al dia cada 8 hrs","4 dias")
 pac.medicamento(rece)
+recetas.append(rece)
+
+
 atencion = AtencionPaciente("Esfinter sensible","10","Ano","Diarrea",medico1.nombre)
 pac.atender(atencion)
+atencionpaciente.append(atencion)
+
+
+
 
 def menuInicio(listaPersonas):
     while True:
@@ -201,7 +211,7 @@ def menuInicio(listaPersonas):
 
 
 
-def menuPrincipalMedicos (listaPersonas):#1.1.1
+def menuPrincipalMedicos (listaPersonas,citas):#1.1.1
 
     print("1-Consultar citas\n"
                 "2-Registrar cita\n"
@@ -217,9 +227,10 @@ def menuPrincipalMedicos (listaPersonas):#1.1.1
               "2-Fecha expecifica\n"
               "3-Salir")
         opCita = int(input("Seleccione una opcion: "))
+
         if opCita == 1:
             result = ""
-            for x in listaCitas:
+            for x in citas:
                 if x.fecha == time.strftime("%x"):
                     result += x.id + " " + x.paciente + " " + x.hora
                     result += "\n"
@@ -228,78 +239,28 @@ def menuPrincipalMedicos (listaPersonas):#1.1.1
                     print("No tiene citas ")
         elif opCita == 2:
             fecha = str(input("Digite la fecha:"))
-            fechaEspecifica(fecha)
+            result = ""
+            for x in citas:
+                if x.fecha == fecha:
+                    result += x.id + " " + x.paciente + " " + x.hora
+                    result += "\n"
+                    print("Cedula:{}\nPaciente:{}\nHora:{}".format(x.id, x.paciente, x.hora))
+                elif x.fecha != fecha:
+                    print("No tiene Citas esta fecha")
         elif opCita == 3:
             print("Gracias por preferirnos\n")
-            menuPrincipalMedicos(listaPersonas)
+            menuPrincipalMedicos(listaPersonas,citas)
 
     elif opMedico == "2":
         pass
     elif opMedico =="3":
-        pass
+       pass
     elif opMedico =="4":
         pass
     elif opMedico =="5":
         print("Gracias por preferirnos")
 
     menuInicio(listaPersonas)
-
-
-
-
-#Menu Consultar Citas
-
-def fechaEspecifica(fecha):
-    result = ""
-    for x in listaCitas:
-        if x.fecha == fecha:
-            result += x.id + " " + x.paciente + " " + x.hora
-            result += "\n"
-            print ("Cedula:{}\nPaciente:{}\nHora:{}".format(x.id,x.paciente,x.hora))
-        elif x .fecha!=fecha:
-            print("No tiene Citas esta fecha")
-
-
-#Funciones de la opcion Receta
-def receta(listaAtenderPacientes,id):
-    for r in listaAtenderPacientes:
-        if r.id  ==r.id:
-            id=str(input("Digete la cedula del paciente: "))
-            receta(listaAtenderPacientes,id)
-
-def insertarReceta(listaRecetas):
-    id=str(input("Digite la cedula:"))
-    nombreMedi=str(input("Digite el nombre del medicamento:"))
-    formaMedi=str(input("Digite la forma de tomar el medicamento"))# Recomendacion
-    cantiDias=str(input("Digite la cantidad de dias:"))
-    registroRecetas=Recetas(id,nombreMedi,formaMedi,cantiDias)
-    listaRecetas.append(registroRecetas)
-
-#funciones de la opcion Atender pacientes
-def insertarAtenderPacientes(listaAtenderPacientes): #Faltaria la manera de validar cedula con citas y citas de secretaria
-    cedula = str(input("Digite la cedula:"))
-    fecha=str(input("Digete la fecha:"))
-    sintomas=str(input("Digete los sintomas: "))
-    nivelDolor=str(input("Digete el nivel de dolor:"))#Rango de dolor
-    posicion=str(input("Digete la posicion:"))#Area
-    diagnostico=str(input("Digete el diagnostico:"))
-    doctor=str(input("Digete el doctor"))
-    receta=str(input("Digete la receta"))
-    registroAtencionPaciente=AtencionPaciente(cedula,fecha,"",sintomas,nivelDolor,posicion,diagnostico,doctor,receta)
-    listaAtenderPacientes.append(registroAtencionPaciente)
-
-
-def atenderPaciente(listaAtenderPacientes):
-    import time
-    for x in listaAtenderPacientes:
-        if x.id==id:
-            insertarAtenderPacientes(listaAtenderPacientes,)
-            for c in listaCitas:
-             if c.id!=c.id:
-                 print ("No esta registrado en la cita,")
-             elif  time.strftime("%I:%M:%S")==c.hora and c.hora >1:
-                 print ("Registrarse en la cita para poder ser Atendido por el doctor")
-
 
 def menuPrincipalSecretaria(listaPersonas):
 
@@ -312,12 +273,12 @@ def menuPrincipalSecretaria(listaPersonas):
    opSecretaria=input("Seleccione una opcion: ")
 
    if opSecretaria == "1":
-       registrarCita(listaPersonas)
+       registrarCita(listaPersonas,citas)
 
    elif opSecretaria == "2":
        cedula = str(input("Digete la cedula del paciente: "))
        fecha = str(input("Digete la fecha de la cita: "))
-       for x in listaAtenderPacientes:
+       for x in atencionpaciente:
            if x.id == cedula and x.fecha == fecha:
                print("Nombre del paciente: {}\nConsultorio medico: Digitaldoctor\n"
                      "Medico: {}\nFecha: {}\nDiagnostico: {}"
@@ -454,7 +415,7 @@ def menuPrincipalPaciente(ListaPersonas):
                     #1.1.2
 #opciones menu secretaria
 
-def registrarCita(listaPersonas,listaCitas):
+def registrarCita(listaPersonas,citas):
     while True:
         id = str(input("Digite la cedula :"))
         paciente = str(input("Digete el nombre del paciente :"))
@@ -462,15 +423,15 @@ def registrarCita(listaPersonas,listaCitas):
         hora = str(input("Digete la hora :"))
         padecimiento = (input("Digete el padecimiento : "))
         doctor = input("Digete el nombre del doctor: ")
-        registroCitas = Citas(id, paciente, fecha, hora, padecimiento, doctor)
-        listaCitas.append(registroCitas)
+        registroCitas = Citas(fecha,hora,doctor)
+        citas.append(registroCitas)
         print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\npadecimiento:{}\ndoctor:{}".format(id, paciente, fecha, hora,
                                                                                               padecimiento, doctor))
         op = input("Desea registrar otra cita s/n ")
         if op == "s":
             pass
         elif op == "n":
-            menuPrincipalSecretaria(listaPersonas, listaCitas)
+            menuPrincipalSecretaria(listaPersonas,citas)
             break
         else:
             print("Valor invalido")

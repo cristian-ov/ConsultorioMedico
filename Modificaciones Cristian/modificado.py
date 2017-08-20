@@ -35,6 +35,16 @@ class Recetas:
         self.formaMedi=formaMedi
         self.cantiDias=cantiDias
 
+    #print(pac)
+    #for c in citas:
+        #print(c)
+
+    #for r in recetas:
+        #print(r)
+
+    #for a in atencionpaciente:
+        #print(a)
+
     def __str__(self):
             return ("Cedula: {}\n Medicamento : {}\n Forma de tomar el medicamento= {}\n Cantidad de Dias = {}\n "
                     .format(self.id,self.nombreMedi, self.formaMedi,self.cantiDias))
