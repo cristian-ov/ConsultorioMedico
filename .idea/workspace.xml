@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32a3a68f-84a3-4e4f-bd60-2896ff328938" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nuevo.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py" afterPath="$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,26 +73,6 @@
                 <element signature="e#15056#15903#0" expanded="false" />
                 <element signature="e#15943#19999#0" expanded="false" />
                 <marker date="1503205912986" expanded="false" signature="13076:13478" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nuevo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nuevo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#46#1002#0" expanded="false" />
-                <element signature="e#1020#1538#0" expanded="false" />
-                <element signature="e#1558#1955#0" expanded="false" />
-                <element signature="e#1984#2732#0" expanded="false" />
-                <element signature="e#4082#4954#0" expanded="false" />
-                <element signature="e#5391#7515#0" expanded="false" />
-                <element signature="e#7895#8978#0" expanded="false" />
-                <element signature="e#9013#10287#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -598,14 +579,20 @@
       <option name="project" value="LOCAL" />
       <updated>1503205005665</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="nuevo">
+      <created>1503205978575</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1503205978575</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13909224" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="401" y="47" width="551" height="634" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13909224" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="401" y="47" width="551" height="634" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -855,17 +842,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#46#1002#0" expanded="false" />
-            <element signature="e#1020#1538#0" expanded="false" />
-            <element signature="e#1558#1955#0" expanded="false" />
-            <element signature="e#1984#2732#0" expanded="false" />
-            <element signature="e#4082#4954#0" expanded="false" />
-            <element signature="e#5391#7515#0" expanded="false" />
-            <element signature="e#7895#8978#0" expanded="false" />
-            <element signature="e#9013#10287#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
