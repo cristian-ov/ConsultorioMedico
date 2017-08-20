@@ -10,19 +10,20 @@ class Persona:
         self.genero = genero
         self.telefono = telefono
         self.tipo_usuario =tipo_usuario
+
     def __str__(self):
         return ("Cedula = {}\n Nombre = {}\n contraseña = {}\n Fecha Nacimiento = {}\n "
                 "Correo = {}\n Direccion = {}\n edad = {}\n genero = {}\n telefono = {}\n Tipo de usuario = {}".format(self.id,self.nombre,self.contraseña,
                                                               self.fechaNacimiento,self.correo,self.direccion,self.edad,self.genero,self.telefono,self.tipo_usuario))
 class paciente:
     def __init__(self,id,nombre,fechaNacimiento,correo,direcion,edad,genero,
-                 telefono,hora,padecimiento,medico):
+                 telefono,padecimiento,medico):
         self.id = id
         self.nombre = nombre
         self.fechaNacimiento = fechaNacimiento
         self.padecimiento = padecimiento
         self.medico = medico
-        self.cita = citas = []
+        self.cita= citas = []
         self.atencionpaciente = []
         self.recetas =[]
         
@@ -32,24 +33,36 @@ class paciente:
     def atender (self,atencion):
         self.atencionpaciente.append(atencion)
 
+    def citaPac(self,cita):
+        self.cita.append(cita)
+
     def __str__(self):
-        return ("Cedula = {}\n Nombre = {}\n Fecha de Nacimiento = {}\n\n "
-                "padecimiento = {}\n Medico = {}".format(self.id,self.nombre,
+        #or i in
+        return ("Cedula = {}\nNombre = {}\nFecha de Nacimiento = {}\n"
+                "Padecimiento = {}\nMedico = {}\n{}\n{}\n{}".format(self.id,self.nombre,
                                                          self.fechaNacimiento,
-                                                         self.padecimiento,self.medico))
+                                                         self.padecimiento,self.medico,
+                                                        self.cita,self.atencionpaciente,self.recetas))
+class Citas:
+    def __init__(self,fecha,hora,doctor):
+        self.fecha=fecha
+        self.hora=hora
+        self.doctor=doctor
+
+    def __str__(self):
+        return ("\n fecha = {}\n hora = {}"
+                "\n doctor = {}".format(self.fecha,self.hora,self.doctor))
 class Receta:
-    def __init__(self,id,nombreMedi,formaMedi,cantiDias):
-        self.id=id
+    def __init__(self,nombreMedi,formaMedi,cantiDias):
         self.nombreMedi=nombreMedi
         self.formaMedi=formaMedi
         self.cantiDias=cantiDias
 
     def __str__(self):
-            return ("Cedula: {}\n Medicamento : {}\n Forma de tomar el medicamento= {}\n Cantidad de Dias = {}\n "
-                    .format(self.id,self.nombreMedi, self.formaMedi,self.cantiDias))
+            return ("\nMedicamento : {}\n Forma de tomar el medicamento= {}\n Cantidad de Dias = {}\n "
+                    .format(self.nombreMedi, self.formaMedi,self.cantiDias))
 class AtencionPaciente:
-    def __init__(self,id,fecha,nombre,sintomas,nivelDolor,posicion,diagnostico,doctor,receta):
-        self.fecha=fecha
+    def __init__(self,sintomas,nivelDolor,posicion,diagnostico,doctor,receta):
         self.sintomas=sintomas
         self.nivelDolor=nivelDolor
         self.posicion=posicion
@@ -58,12 +71,12 @@ class AtencionPaciente:
         self.receta=receta
 
     def __str__(self):
-            return ("fecha:{}\n Sintomas:{}\n Nivel de dolor : {}\n posicion : {}\nDiagnostico:{}\nDoctor:{}\n Receta{}"
-                    .format(self.fecha, self.sintomas,self.nivelDolor,self.posicion,self.diagnostico,self.doctor,self.receta))
+            return ("\n Sintomas:{}\n Nivel de dolor : {}\n posicion : {}\nDiagnostico:{}\nDoctor:{}\n Receta{}"
+                    .format(self.sintomas,self.nivelDolor,self.posicion,self.diagnostico,self.doctor,self.receta))
 
 
-listaPersonas=[]
-cita = citas = []
+listaPersonas =[]
+citas = []
 atencionpaciente = []
 recetas = []
 
@@ -73,17 +86,26 @@ medico1 = Persona ("207790516","Cristian","crisov1998","19/05/1998",
 listaPersonas.append(medico1)
 medico2 = Persona("987","Alfonso","987","26/02/1998","dacripo98@gmail.com","Barrio Lourdes",
                   25,"Masculino","8879-4982","Medico")
-
+#Secretarias
 gloria = Persona (111,"Gloria","111","1995/04/05","gloria@gmail.com","Barrio los Angeles",24,"M","2460-54-51","secretaria",)
 listaPersonas.append(gloria)
 maria = Persona (321,"Maria","321","1998/04/19","chamo@gmail.com","Cedral",19,"M","2460-29-11","secretaria")
 listaPersonas.append(maria)
-eduardo =paciente(456,"Eduardo","08/14/17","9:00 pm","Dolor de cabeza",medico1.nombre)
+
+#Pacientes y diagnostico:
+pac = paciente(456,"Rodolfo","04/10/98","sacodecaca@cr.com","El bajo del Soncho",25,
+               "Masculino","8865-4435","Hemorroides Cronica",medico1.nombre)
+cita = Citas("19/8/17",4,medico1.nombre)
+pac.citaPac(cita)
+rece = Receta("Alka-D","3 veces al dia cada 8 hrs","4 dias")
+pac.medicamento(rece)
+atencion = AtencionPaciente("Esfinter sensible","10","Ano","Diarrea",medico1.nombre,rece)
+pac.atender(atencion)
+
+print(pac)
 
 
-
-
-def menuInicio(listaPersonas,listaCitas):
+def menuInicio(listaPersonas):
     while True:
         try:
             print("\n1-Iniciar sesion\n"
@@ -487,7 +509,7 @@ def ImprimirComprobante(listaAtenderPacientes):
 # Programa Principal:
 
 print(time.strftime("%x"))
-menuInicio(listaPersonas,listaCitas)
+menuInicio(listaPersonas)
 
 #time.strftime("%I:%M:%S")#hora
 
