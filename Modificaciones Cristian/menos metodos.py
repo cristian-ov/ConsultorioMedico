@@ -23,7 +23,7 @@ class paciente:
         self.fechaNacimiento = fechaNacimiento
         self.padecimiento = padecimiento
         self.medico = medico
-        self.cita= citas = []
+        self.cita= []
         self.atencionpaciente = []
         self.recetas =[]
         
@@ -37,12 +37,20 @@ class paciente:
         self.cita.append(cita)
 
     def __str__(self):
-        #or i in
-        return ("Cedula = {}\nNombre = {}\nFecha de Nacimiento = {}\n"
-                "Padecimiento = {}\nMedico = {}\n{}\n{}\n{}".format(self.id,self.nombre,
+        ci = ""
+        at = ""
+        re = ""
+        for c in self.cita:
+            ci = c
+        for a in self.atencionpaciente:
+            at = a
+        for r in self.recetas:
+            re = r
+
+        return ("Expediente:\n\nCedula = {}\nNombre = {}\nFecha de Nacimiento = {}\n"
+                "Padecimiento = {}\nMedico = {}\n\nCitas:\n{}\nDiagnostico:\n\n{}\nRecetas:\n{}".format(self.id,self.nombre,
                                                          self.fechaNacimiento,
-                                                         self.padecimiento,self.medico,
-                                                        self.cita,self.atencionpaciente,self.recetas))
+                                                         self.padecimiento,self.medico,ci,at,re))
 class Citas:
     def __init__(self,fecha,hora,doctor):
         self.fecha=fecha
@@ -50,8 +58,8 @@ class Citas:
         self.doctor=doctor
 
     def __str__(self):
-        return ("\n fecha = {}\n hora = {}"
-                "\n doctor = {}".format(self.fecha,self.hora,self.doctor))
+        return ("Fecha = {}\nHora = {}"
+                "\nMedico = {}\n".format(self.fecha,self.hora,self.doctor))
 class Receta:
     def __init__(self,nombreMedi,formaMedi,cantiDias):
         self.nombreMedi=nombreMedi
@@ -59,20 +67,19 @@ class Receta:
         self.cantiDias=cantiDias
 
     def __str__(self):
-            return ("\nMedicamento : {}\n Forma de tomar el medicamento= {}\n Cantidad de Dias = {}\n "
+            return ("Medicamento : {}\nForma de tomar el medicamento: {}\nCantidad de Dias: {}\n "
                     .format(self.nombreMedi, self.formaMedi,self.cantiDias))
 class AtencionPaciente:
-    def __init__(self,sintomas,nivelDolor,posicion,diagnostico,doctor,receta):
+    def __init__(self,sintomas,nivelDolor,posicion,diagnostico,doctor):
         self.sintomas=sintomas
         self.nivelDolor=nivelDolor
         self.posicion=posicion
         self.diagnostico=diagnostico
         self.doctor=doctor
-        self.receta=receta
 
     def __str__(self):
-            return ("\n Sintomas:{}\n Nivel de dolor : {}\n posicion : {}\nDiagnostico:{}\nDoctor:{}\n Receta{}"
-                    .format(self.sintomas,self.nivelDolor,self.posicion,self.diagnostico,self.doctor,self.receta))
+            return ("Sintomas:{}\nNivel de dolor: {}\nPosicion: {}\nDiagnostico: {}\nDoctor: {}"
+                    .format(self.sintomas,self.nivelDolor,self.posicion,self.diagnostico,self.doctor))
 
 
 listaPersonas =[]
@@ -95,14 +102,14 @@ listaPersonas.append(maria)
 #Pacientes y diagnostico:
 pac = paciente(456,"Rodolfo","04/10/98","sacodecaca@cr.com","El bajo del Soncho",25,
                "Masculino","8865-4435","Hemorroides Cronica",medico1.nombre)
-cita = Citas("19/8/17",4,medico1.nombre)
+cita = Citas("19/8/17","04",medico1.nombre)
 pac.citaPac(cita)
 rece = Receta("Alka-D","3 veces al dia cada 8 hrs","4 dias")
 pac.medicamento(rece)
-atencion = AtencionPaciente("Esfinter sensible","10","Ano","Diarrea",medico1.nombre,rece)
+atencion = AtencionPaciente("Esfinter sensible","10","Ano","Diarrea",medico1.nombre)
 pac.atender(atencion)
 
-print(pac)
+
 
 
 def menuInicio(listaPersonas):
@@ -161,7 +168,7 @@ def menuInicio(listaPersonas):
                     elif valorI == True and valorC == True and valorT == False:
                         print("\nCedula y Contraseña correctas")
                         print("\nBienvenido(a) {}\n".format(name))
-                        menuPrincipalSecretaria(listaPersonas, listaCitas)
+                        menuPrincipalSecretaria(listaPersona)
 
                     elif valorI == False and valorC == True:
                         print("\nCedula o contraseña invalida\n")
@@ -185,7 +192,7 @@ def menuInicio(listaPersonas):
                                       telefono, tipoUsuario,)
                 listaPersonas.append(objregistro)
 
-                menuInicio(listaPersonas, listaCitas)
+                menuInicio(listaPersonas)
 
             elif opMenuIni == 3:
                 print("\n\nGracias por preferirnos\n")
@@ -299,7 +306,7 @@ def insertarAtenderPacientes(listaAtenderPacientes): #Faltaria la manera de vali
     listaAtenderPacientes.append(registroAtencionPaciente)
 
 
-def atenderPaciente(listaAtenderPacientes,listaCitas,):
+def atenderPaciente(listaAtenderPacientes):
     import time
     for x in listaAtenderPacientes:
         if x.id==id:
@@ -311,7 +318,7 @@ def atenderPaciente(listaAtenderPacientes,listaCitas,):
                  print ("Registrarse en la cita para poder ser Atendido por el doctor")
 
 
-def menuPrincipalSecretaria(listaPersonas,listaCitas):
+def menuPrincipalSecretaria(listaPersonas):
 
    print("\n1-Registrar cita\n"
                    "2-Imprimir comprobante\n"
@@ -322,10 +329,10 @@ def menuPrincipalSecretaria(listaPersonas,listaCitas):
    opSecretaria=input("Seleccione una opcion: ")
 
    if opSecretaria == "1":
-       registrarCita(listaPersonas,listaCitas)
+       registrarCita(listaPersonas)
 
    elif opSecretaria == "2":
-       ImprimirComprobante(listaAtenderPacientes)
+       ImprimirComprobante()
 
    elif opSecretaria == "3":
        existe = ""
