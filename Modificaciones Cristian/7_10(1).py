@@ -108,7 +108,7 @@ pac = paciente(456,"Rodolfo","04/10/98","sacodecaca@cr.com","El bajo del Soncho"
                "Masculino","8865-4435","Hemorroides Cronica","Paciente",medico1.nombre)
 pacientes.append(pac)
 
-cita = Citas("08/20/17","01",medico1.nombre)
+cita = Citas("08/20/17","08",medico1.nombre)
 pac.citaPac(cita)
 citas.append(cita)
 
@@ -125,7 +125,8 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
         try:
             print("\n1-Iniciar sesion\n"
                   "2-Registrarse\n"
-                  "3-Salir\n")
+                  "3-Consultas de Paciente\n"
+                  "4-Salir")
             opMenuIni = int(input("Seleccione una opcion:"))
             if opMenuIni == 1:
                 while True:
@@ -142,7 +143,7 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                     while True:
                         try:
                             clave = str(input("Digite su contraseña: "))
-                            if contraseña.isalnum():
+                            if clave.isalnum():
                                 break
                             else:
                                 print("\n\n      ¡Error!\nSolo puedes usar numeros y letras\n")
@@ -152,7 +153,7 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                         if i.id == cedula:
                             valorI = True
                             name = i.nombre
-                            if i.contraseña == contraseña:
+                            if i.clave == clave:
                                 valorC = True
                                 if i.tipo_usuario == "Medico":
                                     valorT = True
@@ -161,12 +162,14 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                                     valorT = False
                                     break
 
-                            elif i.contraseña != contraseña:
+                            elif i.clave != clave:
                                 valorC = False
-                            elif i.contraseña == contraseña:
+                            elif i.clave == clave:
                                 valorC = False
                             elif i.id != cedula:
                                 valorI = False
+                        elif i.id != cedula:
+                            valorI = False
 
                     if valorI == True and valorC == True and valorT == True:
                         print("\nCedula y Contraseña correctas\n")
@@ -186,40 +189,60 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                         print("\nCedula o contraseña invalida\n")
 
             elif opMenuIni== 2: #Validar Datos
-                     id = str(input("Digite la cedula: "))
-                     clave = str(input("Digite la contraseña: "))
-                     nombre = str(input("Digite el nombre: "))
-                     fechaNacimiento = str(input("Digete  la fecha de nacimiento: "))
-                     correo = str(input("Digete el correo: "))
-                     direccion = str(input("Digite la dirección: "))
-                     edad = int(input("Digite la edad:"))
-                     genero = str(input("Digite el genero: "))
-                     telefono = str(input("Digite el telefono : "))
-                     tipoUsuario = str(input("Digete el tipo de usuario : "))
-                     objregistro = Persona(id, nombre, contraseña, fechaNacimiento, correo, direccion, edad, genero,
-                                      telefono, tipoUsuario,)
-                     funcionarios.append(objregistro)
+                while True:
+                    while True:
+                        try:
+                            cedula = int(input("Digite su número de cedula: "))
+                            break
+                        except ValueError:
+                            print("\n\nNO PONGAS LETRAS EN LA CEDULA!!!\n\n")
+                    while True:
+                        try:
+                            clave = str(input("Digite la contraseña: "))
+                            break
+                        except ValueError:
+                            print("Error")
 
-                     menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
+                            nombre = str(input("Digite el nombre: "))
+                            fechaNacimiento = str(input("Digete  la fecha de nacimiento: "))
+                            correo = str(input("Digete el correo: "))
+                            direccion = str(input("Digite la dirección: "))
+                            edad = int(input("Digite la edad:"))
+                            genero = str(input("Digite el genero: "))
+                            telefono = str(input("Digite el telefono : "))
+                            tipoUsuario = str(input("Digete el tipo de usuario : "))
+                            objregistro = Persona(cedula, nombre, clave, fechaNacimiento, correo, direccion, edad, genero,
+                                          telefono, tipoUsuario,)
+                            funcionarios.append(objregistro)
+
+                        menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
             ####
             elif opMenuIni == 3:
-                cedula = str(input("Digete la cedula:"))
-                for x in pacientes:
-                    if x.id == cedula:
-                        menuPrincipalPaciente(funcionarios,pacientes,citas,atencionpaciente,recetas)
-
-                    elif x.id != cedula:
-                        print("Cedula invalida")
-                        menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
+                v = ""
+                while True:
+                    try:
+                        cedula = int(input("Digete la cedula:"))
+                        for x in pacientes:
+                            if x.id == cedula:
+                                v = True
+                            elif x.id != cedula:
+                                v= False
+                        if v == True:
+                            menuPrincipalPaciente(funcionarios, pacientes, citas, atencionpaciente, recetas)
+                            break
+                        elif v == False:
+                            print("Cedula invalida")
+                            menuInicio(funcionarios, pacientes, citas, atencionpaciente, recetas)
+                    except:
+                        print("Datos Erroneos")
 
             elif opMenuIni == 4:
                 print("\n\nGracias por preferirnos\n")
                 break
+            else:
+                print("Error")
         except ValueError:
-            print("\n\nMe cago en TODO lo que se menea\nNO DEBES PONER LETRAS O MUCHOS NUMEROS A LA VEZ\nSTEEE MENNNN  :V")
-
-
-
+            print("\n\nNO DEBES PONER LETRAS O MUCHOS NUMEROS A LA VEZ\n")
 
 def menuPrincipalMedicos (funcionarios,pacientes,citas,atencionpaciente,recetas):#1.1.1
 
@@ -338,10 +361,9 @@ def menuPrincipalMedicos (funcionarios,pacientes,citas,atencionpaciente,recetas)
             ####
             elif opMedico =="5":
                 print("Gracias por preferirnos")
-            menuInicio(funcionarios, pacientes, citas, atencionpaciente, recetas)
+                menuInicio(funcionarios, pacientes, citas, atencionpaciente, recetas)
         except:
             print("Error")
-
 
 def menuPrincipalSecretaria(funcionarios,pacientes,citas,atencionpaciente,recetas):
 
