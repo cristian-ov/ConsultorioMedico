@@ -80,16 +80,16 @@
       <file leaf-file-name="7_10(1).py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/7_10(1).py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="506" column="41" lean-forward="true" selection-start-line="506" selection-start-column="41" selection-end-line="506" selection-end-column="41" />
+            <state relative-caret-position="538">
+              <caret line="513" column="28" lean-forward="false" selection-start-line="513" selection-start-column="28" selection-end-line="513" selection-end-column="28" />
               <folding>
                 <element signature="e#2762#3113#0" expanded="false" />
                 <element signature="e#5494#13573#0" expanded="false" />
                 <element signature="e#5779#8806#0" expanded="false" />
                 <element signature="e#12660#13311#0" expanded="false" />
                 <element signature="e#13966#16258#0" expanded="false" />
-                <element signature="e#30295#31544#0" expanded="false" />
-                <marker date="1503383989648" expanded="false" signature="18905:21729" ph="..." />
+                <element signature="e#30375#31624#0" expanded="false" />
+                <marker date="1503384760048" expanded="false" signature="18905:21729" ph="..." />
               </folding>
             </state>
           </provider>
@@ -645,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503373838626</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="nuevo">
+      <created>1503384644104</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1503384644104</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -925,16 +932,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/7_10(1).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="506" column="41" lean-forward="true" selection-start-line="506" selection-start-column="41" selection-end-line="506" selection-end-column="41" />
+        <state relative-caret-position="538">
+          <caret line="513" column="28" lean-forward="false" selection-start-line="513" selection-start-column="28" selection-end-line="513" selection-end-column="28" />
           <folding>
             <element signature="e#2762#3113#0" expanded="false" />
             <element signature="e#5494#13573#0" expanded="false" />
             <element signature="e#5779#8806#0" expanded="false" />
             <element signature="e#12660#13311#0" expanded="false" />
             <element signature="e#13966#16258#0" expanded="false" />
-            <element signature="e#30295#31544#0" expanded="false" />
-            <marker date="1503383989648" expanded="false" signature="18905:21729" ph="..." />
+            <element signature="e#30375#31624#0" expanded="false" />
+            <marker date="1503384760048" expanded="false" signature="18905:21729" ph="..." />
           </folding>
         </state>
       </provider>

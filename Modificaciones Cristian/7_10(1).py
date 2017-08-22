@@ -493,22 +493,25 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
             elif opMedico =="4":
                 while True:
                     try:
-                        v=""
+                        v4=""
                         ced = int(input("Digete la cedula del paciente: "))
                         for r in pacientes:  # recorre la lista pacientes
                             if ced == r.id:  # si la cedula es =  a la cedula en la lista pacientes
-                                    nombreMedi = str(input("Digite el nombre del medicamento:"))
-                                    formaMedi = str(input("Digite la forma de tomar el medicamento"))  # Recomendacion
-                                    cantiDias = str(input("Digite la cantidad de dias:"))
-                                    registrarReceta = Receta(nombreMedi, formaMedi,cantiDias)  # guardar en la variable  los datos de la clase receta
-                                    citas.append(registrarReceta)  # guardar registrar receta en la lista citas
-                                    print("nombre de Medicina:{}\nForma de tomar el medicamento:{}\nCantidad de Dias"
+                                v4=True
+                                nombreMedi = str(input("Digite el nombre del medicamento:"))
+                                formaMedi = str(input("Digite la forma de tomar el medicamento"))  # Recomendacion
+                                cantiDias = str(input("Digite la cantidad de dias:"))
+                                registrarReceta = Receta(nombreMedi, formaMedi,cantiDias)  # guardar en la variable  los datos de la clase receta
+                                citas.append(registrarReceta)  # guardar registrar receta en la lista citas
+                                print("nombre de Medicina:{}\nForma de tomar el medicamento:{}\nCantidad de Dias"
                                         .format(nombreMedi, formaMedi, cantiDias))
-                                    break
+                                break
                             elif ced != r.id:  # si la cedula es diferente a la cedula en la lista pacientes
-                                v = False  # variable false
-                            if v == False:  # si variable = false
-                                print("Cedula invalida")
+                                v4 = False  # variable false
+                        if v4 == False:  # si variable = false
+                            print("Cedula invalida")
+                        if v4 == True:
+                            break
                     except ValueError:
                         print("Error")
 
