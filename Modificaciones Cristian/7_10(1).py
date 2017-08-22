@@ -160,7 +160,7 @@ pacientes.append(pac2)#Ingresa los datos del paciente a la lista paciente
 #Citas
 cita2=Citas("08/22/17","08",medico2.nombre) #Ingresa los datos de la cita a la lista citas
 pac2.citaPac(cita2)
-medico1.citas_medico(cita1)
+medico1.citas_medico(cita1)#guarda las citas en el metodo citas del medico1
 citas.append(cita2)
 #Atencion
 atencion2= AtencionPaciente("Gripe","Moquera","4","Todo el cuerpo","Resfriado")#Ingresa los datos de la receta a lista recetas
@@ -534,7 +534,7 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                         else:
                                             print("Valor invalido")
                                     except:
-                                        print("")
+                                        print("")#Revisar diagnostico
                                 rec=Receta(nMedicamento,forma,dias)#Instancia del objeto
                                 x.medicamento(rec)#se utiliza el metodo medicamento para guardar en la lista receta
                                 recetas.append(rec)#se guarda el objeto en lista recetas
@@ -619,7 +619,7 @@ def menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaci
                             if t.tipo_usuario == "Medico":
                                 print("Doctor:", t.nombre)
                         doctor = input("Digete el nombre del doctor: ")
-                        for l in funcionarios:
+                        for l in funcionarios:#### guardar cita tambien medico seleccionado
                             if doctor == l.nombre:#Valida el nombre ingresado con el nombre de los medicos
                                 existe2 = True
                                 break
@@ -628,6 +628,7 @@ def menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaci
                         if existe2 == True:
                             registroCitas = Citas(fecha,hora,doctor)#instancia el objeto
                             i.citaPac(registroCitas)#llama al metodo para guardar en lista
+
                             citas.append(registroCitas)#guarda el objeto en lista
                             print(citas[-1])#imprime la ultima cita
 
