@@ -1,7 +1,8 @@
-import time
+import time #Libreria para verificar la fecha
 
+#Creacion de clases
 class Persona:
-    def __init__(self,id,nombre,clave,fechaNacimiento,correo,direccion,edad,genero,telefono,tipo_usuario):
+    def __init__(self,id,nombre,clave,fechaNacimiento,correo,direccion,edad,genero,telefono,tipo_usuario):#Atributos y constructor de clase Persona
         self.id = id
         self.nombre = nombre
         self.clave= clave
@@ -12,14 +13,14 @@ class Persona:
         self.genero = genero
         self.telefono = telefono
         self.tipo_usuario =tipo_usuario
-        self.citas_del_dia = []
+        self.citas_del_dia = []#lista donde se guardaran las citas del doctor
 
-    def citas_medico(self,cita):
+    def citas_medico(self,cita):# metodo que añade las citas a la 'lista citas_del_dia'
         self.citas_del_dia.append(cita)
 
     def __str__(self):
         cd =""
-        for x in self.citas_del_dia:
+        for x in self.citas_del_dia: #For para que se puedan imprimir los datos de 'citas_del_dia' en el metodo string
             cd = x
 
         return ("Cedula = {}\n Nombre = {}\n contraseña = {}\n Fecha Nacimiento = {}\n "
@@ -37,10 +38,12 @@ class Paciente:
         self.genero = genero
         self.telefono=telefono
         self.tipo_usuario = tipo_usuario
+        #listas que guardaran los datos de las demas clase adjuntas abajo
         self.cita= []
         self.atencionpaciente = []
         self.recetas =[]
-        
+
+    #metodos que añade los datos de las demas clases en sus respectivas listas
     def medicamento (self,receta):
         self.recetas.append(receta)
 
@@ -51,6 +54,7 @@ class Paciente:
         self.cita.append(cita)
 
     def __str__(self):
+        # For para que se puedan imprimir los datos en el metodo string
         ci = ""
         at = ""
         re = ""
@@ -95,11 +99,14 @@ class AtencionPaciente:
             return ("\nPadecimiento: {}\nSintomas:{}\nNivel de dolor: {}\nPosicion: {}\nDiagnostico: {}"
                     .format(self.padecimiento,self.sintomas,self.nivelDolor,self.posicion,self.diagnostico))
 
+#Listas en las que se guardaran los objetos
 funcionarios =[]
 pacientes =[]
 citas = []
 atencionpaciente = []
 recetas = []
+
+# Objetos Instanciados
 
 #Medicos
 medico1 = Persona (123,"Cristian","123","19/05/1998",
@@ -172,7 +179,7 @@ recetas.append(rece8)
 pac3=Paciente(222,"Pepe","09/03/97","pepe@gmail.com","San gerardo",19,"Masculino","7585-2515","Paciente")
 pacientes.append(pac3)#Ingresa los datos del paciente a la lista paciente
 
-
+#metodo que verifica que una cedula este o no en la lista pacientee o funcionarios
 def buscar_cedula_paciente(pacientes,cedula):
     v = ""
     for x in pacientes:
@@ -181,7 +188,7 @@ def buscar_cedula_paciente(pacientes,cedula):
             break
         elif cedula != x.id:
             v = False
-    return v
+    return v #devuelve un valor Booleano en la variable v
 
 def buscar_cedula_funcionario(funcionarios,cedula):
     v = ""
@@ -193,11 +200,7 @@ def buscar_cedula_funcionario(funcionarios,cedula):
             v = False
     return v
 
-"""while True:
-    try:
-        pass
-    except ValueError:
-        print("Error")"""
+#Menu Principal
 def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
     while True:
         try:
@@ -208,40 +211,42 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
             opMenuIni = int(input("Seleccione una opcion:"))
             if opMenuIni == 1:
                 while True:
+                    #Valores para verificar los bucles For
                     valorI = 0
                     valorC = 0
                     valorT = 0
+                    "Variables para extraer datos"
                     name = ""
                     medico =""
                     secretaria = ""
-                    while True:
+                    while True: #while True...try/except utilizado para validar los datos que son digitados por el usuario
                         try:
                             cedula = int(input("\nDigite su número de cedula: "))
                             break
                         except ValueError:
-                            print("\n\nNO PONGAS LETRAS EN LA CEDULA!!!\n")
+                            print("\n\nNO PONGAS LETRAS O SIMBOLOS EN LA CEDULA!!!\n")
                     while True:
                         try:
                             clave = str(input("Digite su contraseña: "))
-                            if clave.isalnum():
+                            if clave.isalnum():#Validacionde datos solo letras y numeros, no signos o simbolos
                                 break
                             else:
                                 print("\n\n      ¡Error!\nSolo puedes usar numeros y letras\n")
                         except:
-                            print("no no ")
-                    for i in funcionarios:
+                            print("Digiste Valores incorrectos ")
+                    for i in funcionarios:#for que recorre los la lista funcionarios y verifica la informacion
                         if i.id == cedula:
                             valorI = True
                             name = i.nombre
                             if i.clave == clave:
-                                valorC = True
-                                if i.tipo_usuario == "Medico":
+                                valorC = True #booleanos para utilizar al alir del For
+                                if i.tipo_usuario == "Medico":#Verificacion de medico
                                     valorT = True
-                                    medico = i.nombre
+                                    medico = i.nombre#Guarda la variable para identificarla al entrar al menu
                                     break
-                                elif i.tipo_usuario == "Secretaria":
+                                elif i.tipo_usuario == "Secretaria":#Verificacion de Secretaria
                                     valorT = False
-                                    secretaria = i.nombre
+                                    secretaria = i.nombre#Guarda la variable para identificarla al entrar al menu
                                     break
 
                             elif i.clave != clave:
@@ -253,17 +258,17 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                         elif i.id != cedula:
                             valorI = False
 
-                    if valorI == True and valorC == True and valorT == True:
+                    if valorI == True and valorC == True and valorT == True: #Validacion con booleanos para identificar medico de secretaria
                         print("\nCedula y Contraseña correctas\n")
-                        print("\nBienvenido(a) {}\n".format(name))
+                        print("\nBienvenido(a) {}\n".format(name))#utilizacion del i.nombre
                         menuPrincipalMedicos(medico,funcionarios,pacientes,citas,atencionpaciente,recetas)
 
-                    elif valorI == True and valorC == True and valorT == False:
+                    elif valorI == True and valorC == True and valorT == False: #Validacion con booleanos
                         print("\nCedula y Contraseña correctas")
-                        print("\nBienvenido(a) {}\n".format(name))
+                        print("\nBienvenido(a) {}\n".format(name))#utilizacion del i.nombre
                         menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaciente,recetas)
 
-                    elif valorI == False and valorC == True:
+                    elif valorI == False and valorC == True: #Validacion con booleanos en caso de cedula o contraseña no valida
                         print("\nCedula o contraseña invalida\n")
                     elif valorI == True and valorC == False:
                         print("\nCedula o contraseña invalida\n")
@@ -275,9 +280,10 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                     while True:
                         try:
                             cedula = int(input("\n\nDigite su número de cedula: "))
-                            if buscar_cedula_funcionario(funcionarios,cedula) == False:
+                            #retorna booleanos para validar cedula
+                            if buscar_cedula_funcionario(funcionarios,cedula) == False:#utilizacion de los metodos buscar_cedula_funcionario
                                 break
-                            if buscar_cedula_funcionario(funcionarios,cedula) == True:
+                            if buscar_cedula_funcionario(funcionarios,cedula) == True:#utilizacion de los metodos buscar_cedula_funcionario
                                 print("Cedula ya registrada")
                         except ValueError:
                             print("\n\nNO PONGAS LETRAS EN LA CEDULA!!!\n\n")
@@ -286,47 +292,47 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                             clave = str(input("Digite la contraseña: "))
                             break
                         except ValueError:
-                            print("Error")
+                            print("Datos incorrectos")
                     while True:
                         try:
                             nombre = str(input("Digite el nombre: "))
                             break
                         except ValueError:
-                            print("\nERROR\n")
+                            print("\nDatos incorrectos\n")
                     while True:
                         try:
                             fechaNacimiento = str(input("Digete  la fecha de nacimiento: "))
                             break
                         except ValueError:
-                            print("\nERROR\n")
+                            print("\nDatos incorrectos\n")
 
                     while True:
                         try:
                             correo = str(input("Digete el correo: "))
                             break
                         except ValueError:
-                            print("\nERROR\n")
+                            print("\nDatos incorrectos\n")
                     while True:
                         try:
                             direccion = str(input("Digite la dirección: "))
                             break
                         except ValueError:
-                            print("\nERROR\n")
+                            print("\nDatos incorrectos\n")
                     while True:
                         try:
                             edad = int(input("Digite la edad:"))
                             break
                         except ValueError:
-                            print("\nERROR\n")
+                            print("\nDatos incorrectos (string)\n")
                     while True:
                         try:
-                            genero = str(input("Digite el genero\n'Masculino' o 'Femenino': "))
+                            genero = str(input("Digite el genero\n'Masculino' o 'Femenino': "))#Verificacion del genero
                             if genero == "Masculino":
                                 break
                             elif genero == "Femenino":
                                 break
                             else:
-                                print("Datos no validos")
+                                print("Datos no correctos a 'Masculino' o 'Femenino'")
                         except ValueError:
                             print("\nERROR\n")
                     while True:
@@ -348,18 +354,17 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                         except ValueError:
                             print("\nERROR\n")
                     objregistro = Persona(cedula, nombre, clave, fechaNacimiento, correo, direccion, edad, genero,
-                                          telefono, tipoUsuario,)
-                    funcionarios.append(objregistro)
+                                          telefono, tipoUsuario,)#instacia del objeto
+                    funcionarios.append(objregistro)#agregado del objeto
 
-                    menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
+                    menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)#menu incio
 
             elif opMenuIni == 3:
-                v = ""
                 while True:
                     try:
                         cedula = int(input("Digete la cedula:"))
-                        if buscar_cedula_paciente(pacientes,cedula) == True:
-                            menuPrincipalPaciente(cedula,funcionarios, pacientes, citas, atencionpaciente, recetas)
+                        if buscar_cedula_paciente(pacientes,cedula) == True: # Valida cedula y entra al menu de pacientes
+                            menuPrincipalPaciente(cedula,funcionarios, pacientes, citas, atencionpaciente, recetas)#se le ingresa a los parametros la cedula para poder continuar
                             break
                         elif buscar_cedula_paciente(pacientes,cedula) == False:
                             print("Cedula invalida")
@@ -371,10 +376,10 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                 print("\n\nGracias por preferirnos\n")
                 break
             else:
-                print("Error")
+                print("Datos Erroneos")
         except ValueError:
             print("\n\nNO DEBES PONER LETRAS O MUCHOS NUMEROS A LA VEZ\n")
-
+#menu Medicos
 def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,recetas):
     while True:
         print("      Menu Medicos\n\n"
@@ -395,17 +400,16 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                       "3-Salir")
                     try:
                         opCita = int(input("Seleccione una opcion: "))
-                        if opCita == 1:
+                        if opCita == 1:#Verifica citas del dia
                             v = ""
-                            for x in funcionarios:
+                            for x in funcionarios: # Verifica el nombre del medico para preguntar por sus citas
                                 if x.nombre == medico:
                                     for i in x.citas_del_dia:
                                         cont = 1
-                                        if i.fecha == time.strftime("%x"):
-                                            print("{}: Fecha: {} Hora: {}:00".format(cont,i.fecha,i.hora))
+                                        if i.fecha == time.strftime("%x"):#uso de la libreria time
+                                            print("{}: Fecha: {} Hora: {}:00".format(cont,i.fecha,i.hora))#print para facilitar el uso de los datos
                                             cont +=1
-                                        elif i.fecha != time.strftime("&x"):
-                                            v = False
+                                        elif i.fecha != time.strftime("&x"):# "&x" muestra la fecha actual                                           v = False
                                     if v == False:
                                         print("No tiene citas ")
                                     break
@@ -562,7 +566,7 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                 menuInicio(funcionarios, pacientes, citas, atencionpaciente, recetas)
         except:
             print("Error en Menu medicos")
-
+#Menu de Secretarias
 def menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaciente,recetas):
 
     print("\n      Menu Secretarias\n\n"
@@ -744,7 +748,7 @@ def menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaci
     elif opSecretaria == "4":
         print("Gracias por preferirnos")
         menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
-
+#Menu de Pacientes
 def menuPrincipalPaciente(cedula,funcionarios,pacientes,citas,atencionpaciente,recetas):
 
                 print("1-Ultimas 3 recetas\n"
@@ -831,4 +835,5 @@ def menuPrincipalPaciente(cedula,funcionarios,pacientes,citas,atencionpaciente,r
 # Programa Principal:
 
 print(time.strftime("%x"))
+print(time.strftime("%I:%M:%S"))
 menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)
