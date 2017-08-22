@@ -131,8 +131,9 @@ funcionarios.append(maria)
 pac1 = Paciente(456, "Rodolfo", "04/10/98", "sacodecaca@cr.com", "El bajo del Soncho", 25,"Masculino", "8865-4435","Paciente")
 pacientes.append(pac1)#Ingresa los datos del paciente a la lista paciente
 #Citas
-cita1 = Citas("08/22/17", "05", medico1.nombre) #Ingresa los datos de la cita a la lista citas
+cita1 = Citas("08/22/17", "08", medico1.nombre) #Ingresa los datos de la cita a la lista citas
 pac1.citaPac(cita1)
+medico1.citas_medico(cita1)
 citas.append(cita1)
 #Atencion
 atencion1 = AtencionPaciente("Esfinter sensible", "10", "Ano","Diarrea","Hemorroides cronica")#Ingresa los datos de atencion  a lista Atencion paciente
@@ -157,8 +158,9 @@ recetas.append(rece4)
 pac2= Paciente(789,"Ana","09/05/97","anita@gmail.com","San gerardo",18,"femenino","7085-2515","Paciente")
 pacientes.append(pac2)#Ingresa los datos del paciente a la lista paciente
 #Citas
-cita2=Citas("08/25/17","05",medico2.nombre) #Ingresa los datos de la cita a la lista citas
+cita2=Citas("08/22/17","08",medico2.nombre) #Ingresa los datos de la cita a la lista citas
 pac2.citaPac(cita2)
+medico1.citas_medico(cita1)
 citas.append(cita2)
 #Atencion
 atencion2= AtencionPaciente("Gripe","Moquera","4","Todo el cuerpo","Resfriado")#Ingresa los datos de la receta a lista recetas
