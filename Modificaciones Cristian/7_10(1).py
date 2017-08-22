@@ -449,7 +449,7 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                         try:
                             for x in pacientes:
                                 if ced == x.id:
-                                    print("Paciente: ",x.nombre)#revisar For
+                                    print("Paciente: ",x.nombre)#Solo se necesita de la ceudla para saber el nombre del paciente
                                     paciente =x.nombre
                                     while True:
                                         try:
@@ -467,12 +467,12 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                         except:
                                             print("Datos invalidos")
                                     hora = str(input("Digite la hora :"))
-                                    registroCita = Citas(fecha, hora, medico)
-                                    citas.append(registroCita)
-                                    x.citaPac(registroCita)
+                                    registroCita = Citas(fecha, hora, medico)#medico es una parametro heredado desde el menu inicio de sesion
+                                    citas.append(registroCita)#los registra en la lsita citas
+                                    x.citaPac(registroCita)#mete el objeto en la variable cita con el metodo citaPac
                                     print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\ndoctor:{}"
-                                          .format(ced, paciente, fecha, hora, medico))
-                                    op = input("Desea registrar otra cita s/n ")
+                                          .format(ced, paciente, fecha, hora, medico)) #modelo que imprime el resultado de la entrada de datos
+                                    op = input("Desea registrar otra cita s/n ")#Pregunta en caso de volver a queres a registrar otra persona
                                     if op == "s":
                                         pass
                                     elif op == "n":
