@@ -1,7 +1,7 @@
 import time #Libreria para verificar la fecha
 
 #Creacion de clases
-class Persona:
+class Funcionario:
     def __init__(self,id,nombre,clave,fechaNacimiento,correo,direccion,edad,genero,telefono,tipo_usuario):#Atributos y constructor de clase Persona
         self.id = id
         self.nombre = nombre
@@ -109,17 +109,21 @@ recetas = []
 # Objetos Instanciados
 
 #Medicos
-medico1 = Persona (123,"Cristian","123","19/05/1998",
+medico1 = Funcionario (123,"Cristian","123","19/05/1998",
                    "cristianov19@gmail.com","Cedral",19,"Masculino","8521-3563","Medico")
 funcionarios.append(medico1)
 
-medico2 = Persona(987,"Alfonso","987","26/02/1998","dacripo98@gmail.com","Barrio Lourdes",
+medico2 = Funcionario (987,"Alfonso","987","26/02/1998","dacripo98@gmail.com","Barrio Lourdes",
                   25,"Masculino","8879-4982","Medico")
 funcionarios.append(medico2)
+
+medico3=Funcionario(333, "Gloriana", "333", "04/12/1998", "dacripo98@gmail.com", "Barrio Lourdes",
+                  25, "Femenino","8579-4982","Medico")
+funcionarios.append(medico3)
 #Secretarias
-gloria = Persona (111,"Gloria","111","1995/04/05","gloria@gmail.com","Barrio los Angeles",24,"M","2460-54-51","secretaria",)
+gloria = Funcionario (111,"Gloria","111","1995/04/05","gloria@gmail.com","Barrio los Angeles",24,"M","2460-54-51","secretaria",)
 funcionarios.append(gloria)
-maria = Persona (321,"Maria","321","1998/04/19","chamo@gmail.com","Cedral",19,"M","2460-29-11","secretaria")
+maria = Funcionario (321,"Maria","321","1998/04/19","chamo@gmail.com","Cedral",19,"M","2460-29-11","secretaria")
 funcionarios.append(maria)
 
 # Pacientes:
@@ -353,7 +357,7 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                                 print("Datos no validos")
                         except ValueError:
                             print("\nERROR\n")
-                    objregistro = Persona(cedula, nombre, clave, fechaNacimiento, correo, direccion, edad, genero,
+                    objregistro = Funcionario (cedula, nombre, clave, fechaNacimiento, correo, direccion, edad, genero,
                                           telefono, tipoUsuario,)#instacia del objeto
                     funcionarios.append(objregistro)#agregado del objeto
 
@@ -409,7 +413,8 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                         if i.fecha == time.strftime("%x"):#uso de la libreria time
                                             print("{}: Fecha: {} Hora: {}:00".format(cont,i.fecha,i.hora))#print para facilitar el uso de los datos
                                             cont +=1
-                                        elif i.fecha != time.strftime("&x"):# "&x" muestra la fecha actual                                           v = False
+                                        elif i.fecha != time.strftime("&x"):# "&x" muestra la fecha actual
+                                             v = False
                                     if v == False:
                                         print("No tiene citas ")
                                     break
@@ -419,7 +424,7 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                             v = ""
                             for x in funcionarios:
                                 if x.nombre == medico:
-                                    for i in x.citas_del_dia:
+                                    for i in x.citas_del_dia:#Revisa una fecha especifica en el atributo citas del dia de la clase funcionario
                                         cont = 1
                                         if i.fecha == time.strftime("%x"):
                                             print("{}: Fecha: {} Hora: {}:00".format(cont, i.fecha, i.hora))
