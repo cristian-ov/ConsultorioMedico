@@ -360,7 +360,7 @@ def menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas):
                         except ValueError:
                             print("\nERROR\n")
                     objregistro = Funcionario (cedula, nombre, clave, fechaNacimiento, correo, direccion, edad, genero,
-                                          telefono, tipoUsuario,)#instacia del objeto
+                                          telefono, tipoUsuario,)#instancia del objeto
                     funcionarios.append(objregistro)#agregado del objeto
 
                     menuInicio(funcionarios,pacientes,citas,atencionpaciente,recetas)#menu incio
@@ -445,6 +445,8 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
 
             elif opMedico == "2":
                 v = ""
+                v2 = ""
+                v3 = ""
                 while True:
                     while True:
                         ced = int(input("Digite la cedula :"))
@@ -456,7 +458,6 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                     while True:
                                         try:
                                             fecha = str(input("Digite la fecha :"))
-                                            v2 = ""
                                             for i in x.cita:
                                                 if i.fecha == fecha:
                                                     v2 = False
@@ -471,6 +472,12 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                     hora = str(input("Digite la hora :"))
                                     registroCita = Citas(fecha, hora, medico)#medico es una parametro heredado desde el menu inicio de sesion
                                     citas.append(registroCita)#los registra en la lista citas
+                                    for j in funcionarios:
+                                        if j.tipo_usuario == medico:
+                                            j.citas_del_dia(registroCita)
+                                            break
+                                        elif j.tipo_usuario != medico:
+                                            pass
                                     x.citaPac(registroCita)#mete el objeto en la variable cita con el metodo citaPac
                                     print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\ndoctor:{}"
                                           .format(ced, paciente, fecha, hora, medico)) #modelo que imprime el resultado de la entrada de datos

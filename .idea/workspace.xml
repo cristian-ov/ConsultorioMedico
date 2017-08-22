@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32a3a68f-84a3-4e4f-bd60-2896ff328938" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Modificaciones Cristian/7_10(1).py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modificaciones Cristian/Consultorio medico.py" afterPath="$PROJECT_DIR$/Modificaciones Cristian/Consultorio medico.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menos metodos.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menos metodos.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
@@ -72,6 +72,24 @@
                 <element signature="e#13939#15013#0" expanded="false" />
                 <element signature="e#15056#15903#0" expanded="false" />
                 <element signature="e#15943#19999#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Consultorio medico.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/Consultorio medico.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="475" column="68" lean-forward="true" selection-start-line="475" selection-start-column="68" selection-end-line="475" selection-end-column="68" />
+              <folding>
+                <element signature="e#8436#12240#0" expanded="false" />
+                <element signature="e#12290#16411#0" expanded="false" />
+                <element signature="e#16462#17204#0" expanded="false" />
+                <element signature="e#17255#17315#0" expanded="false" />
+                <element signature="e#17919#20472#0" expanded="false" />
+                <element signature="e#23826#27834#0" expanded="false" />
+                <element signature="e#27885#29542#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -149,6 +167,7 @@
         <option value="$PROJECT_DIR$/Modificaciones Cristian/menos metodos.py" />
         <option value="$USER_HOME$/Downloads/modificando_eduardo.py" />
         <option value="$PROJECT_DIR$/Modificaciones Cristian/7_10(1).py" />
+        <option value="$PROJECT_DIR$/Modificaciones Cristian/Consultorio medico.py" />
       </list>
     </option>
   </component>
@@ -716,13 +735,21 @@
       <option name="project" value="LOCAL" />
       <updated>1503409529963</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="nuevo">
+      <created>1503410469063</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1503410469063</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="401" y="47" width="551" height="634" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15128593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="401" y="47" width="551" height="634" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -788,18 +815,11 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="75" />
+      <option name="time" value="76" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/pruebasProyecto.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modificaciones/ProyectoPrincipal.py" />
     <entry file="file://$PROJECT_DIR$/proyectoProgra (1).py" />
     <entry file="file://$PROJECT_DIR$/clases acomodadad.py" />
@@ -1010,6 +1030,22 @@
             <element signature="e#13939#15013#0" expanded="false" />
             <element signature="e#15056#15903#0" expanded="false" />
             <element signature="e#15943#19999#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modificaciones Cristian/Consultorio medico.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="475" column="68" lean-forward="true" selection-start-line="475" selection-start-column="68" selection-end-line="475" selection-end-column="68" />
+          <folding>
+            <element signature="e#8436#12240#0" expanded="false" />
+            <element signature="e#12290#16411#0" expanded="false" />
+            <element signature="e#16462#17204#0" expanded="false" />
+            <element signature="e#17255#17315#0" expanded="false" />
+            <element signature="e#17919#20472#0" expanded="false" />
+            <element signature="e#23826#27834#0" expanded="false" />
+            <element signature="e#27885#29542#0" expanded="false" />
           </folding>
         </state>
       </provider>
