@@ -449,7 +449,7 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                         try:
                             for x in pacientes:
                                 if ced == x.id:
-                                    print("Paciente: ",x.nombre)#Solo se necesita de la ceudla para saber el nombre del paciente
+                                    print("Paciente: ",x.nombre)#Solo se necesita de la cedula para saber el nombre del paciente
                                     paciente =x.nombre
                                     while True:
                                         try:
@@ -468,7 +468,7 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                             print("Datos invalidos")
                                     hora = str(input("Digite la hora :"))
                                     registroCita = Citas(fecha, hora, medico)#medico es una parametro heredado desde el menu inicio de sesion
-                                    citas.append(registroCita)#los registra en la lsita citas
+                                    citas.append(registroCita)#los registra en la lista citas
                                     x.citaPac(registroCita)#mete el objeto en la variable cita con el metodo citaPac
                                     print("\nid: {}\npaciente: {}\nfecha: {}\nhora:{}\ndoctor:{}"
                                           .format(ced, paciente, fecha, hora, medico)) #modelo que imprime el resultado de la entrada de datos
@@ -498,7 +498,7 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                 try:
                                     v3 = ""
                                     for h in x.cita:
-                                        if h.medico == medico:
+                                        if h.medico == medico:#Valida que la cedula  que digito este con el nombre del medico
                                             v3 = True
                                             break
                                         elif h.medico != medico:
@@ -510,24 +510,37 @@ def menuPrincipalMedicos (medico,funcionarios,pacientes,citas,atencionpaciente,r
                                 except:
                                     print("Error")
 
-                            if time.strftime("%x") == i.fecha and time.strftime("%I") == i.hora:
+                            if time.strftime("%x") == i.fecha and time.strftime("%I") == i.hora:#Valida si esta tiempo para la cita
                                 print("usted esta a tiempo para la cita")
                                 padecimiento = str(input("Digite el padecimiento: "))
                                 sintomas = str(input("Digete los sintomas: "))
                                 nivelDolor = str(input("Digete el nivel de dolor:"))
                                 posicion = str(input("Digete la posicion:"))
                                 diagnostico = str(input("Digete el diagnostico:"))
-                                nMedicamento = str(input("Digete la receta:\nNombre del medicamento: "))
-                                forma = str(input("Forma de uso: "))
-                                dias = str(input("Durante cuanto tiempo: "))
-                                rec=Receta(nMedicamento,forma,dias)
-                                x.medicamento(rec)
-                                recetas.append(rec)
+                                while True:
+                                    try:
+                                        nMedicamento = str(input("Digete la receta:\nNombre del medicamento: "))
+                                        forma = str(input("Forma de uso: "))
+                                        dias = str(input("Durante cuanto tiempo: "))
+
+                                        op = input("Desea registrar otra receta? s/n ")#Permite recetar varios medicamentos
+                                        if op == "s":
+                                            pass
+                                        elif op == "n":
+                                            menuPrincipalMedicos(medico, funcionarios, pacientes, citas, atencionpaciente,recetas)
+                                            break
+                                        else:
+                                            print("Valor invalido")
+                                    except:
+                                        print("")
+                                rec=Receta(nMedicamento,forma,dias)#Instancia del objeto
+                                x.medicamento(rec)#se utiliza el metodo medicamento para guardar en la lista receta
+                                recetas.append(rec)#se guarda el objeto en lista recetas
                                 registroAtenderPaciente = AtencionPaciente(padecimiento,sintomas, nivelDolor,
-                                posicion, diagnostico)
-                                x.atender(registroAtenderPaciente)
-                                atencionpaciente.append(registroAtenderPaciente)
-                                print(x)
+                                posicion, diagnostico)#se añaden las recetas aparte del diagnostico
+                                x.atender(registroAtenderPaciente)# metodo que guarda los datos en lista
+                                atencionpaciente.append(registroAtenderPaciente)#guarda elementos en lista atencionpaciente
+                                print(x)#muestra el objeto con el que hicimos el diagnostico
 
                                 break
                             elif time.strftime("%x") != i.fecha or (time.strftime("%I") != i.hora or time.strftime("%I") < x.hora):
@@ -584,9 +597,10 @@ def menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaci
     opSecretaria=input("Seleccione una opcion: ")
 
     if opSecretaria == "1":
+        #Variables para usar con valores booleanos
         existe = ""
         existe2 = ""
-        doc = ""
+        #variables para datos que se necesitan mover
         nombre = ""
         while True:
             try:
@@ -594,28 +608,28 @@ def menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaci
                 for i in pacientes:
                     if i.id == ced:
                         existe = True
-                        nombre = i.nombre
+                        nombre = i.nombre#Guarda el nombre para imprimirlo despues y identificar la cedula
                         print(nombre)
                         fecha = str(input("Digete la fecha :"))
                         hora = str(input("Digete la hora :"))
                         print("Doctores:")
-                        for t in funcionarios:
+                        for t in funcionarios:#muestra la lista de los doctores ya anteriormente instanciados
                             if t.tipo_usuario == "Medico":
                                 print("Doctor:", t.nombre)
                         doctor = input("Digete el nombre del doctor: ")
                         for l in funcionarios:
-                            if doctor == l.nombre:
+                            if doctor == l.nombre:#Valida el nombre ingresado con el nombre de los medicos
                                 existe2 = True
                                 break
                             elif doctor != l.nombre:
                                 existe2 = False
                         if existe2 == True:
-                            registroCitas = Citas(fecha,hora,doctor)
-                            i.citaPac(registroCitas)
-                            citas.append(registroCitas)
-                            print(citas[-1])
+                            registroCitas = Citas(fecha,hora,doctor)#instancia el objeto
+                            i.citaPac(registroCitas)#llama al metodo para guardar en lista
+                            citas.append(registroCitas)#guarda el objeto en lista
+                            print(citas[-1])#imprime la ultima cita
 
-                            op = input("Desea registrar otra cita s/n ")
+                            op = input("Desea registrar otra cita s/n ")#Permite ingresar otra cita
                             if op == "s":
                                 pass
                             elif op == "n":
@@ -645,7 +659,7 @@ def menuPrincipalSecretaria(secretaria,funcionarios,pacientes,citas,atencionpaci
         while True:
             try:
                 cedula = int(input("Digete la cedula del paciente: "))
-                for x in pacientes:
+                for x in pacientes:#Validacion de que cedula este registrada para el comprobante
                     if x.id == cedula:
                         v1 = True
                         while True:
